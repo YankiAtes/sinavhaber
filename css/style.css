@@ -62,10 +62,14 @@ body{
   }
   
 }*/
+div{
+  flex: auto;
+}
 .news{
   background-color: red;
   float: left;
   box-shadow: 1px 1px 15px rgba(0,0,0,1);
+  flex: auto;
 }
 .news:hover{
   box-shadow: 4px 4px 15px rgba(0,0,0,1);
