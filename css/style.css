@@ -129,4 +129,11 @@ div{
   color: black;
 }*/
 
+.topbanner{
+  margin-left: auto;
+  display: inline-block;
+  float: right;
+  margin-right: 2%;
+  margin-top: 1%;
+}
 
