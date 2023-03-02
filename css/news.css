@@ -49,13 +49,14 @@ img{
   margin-left: 0;
 }
 .news-section-banner{
-  background-color: red;
   width: auto;
-  height: 700px;
+  height: auto;
   float: right;
   margin-top: 8%;
-  margin-right: 5%;
-  
+  margin-right: 5%; 
+}
+.banner-image1{
+  object-fit: cover;
 }
 
 
