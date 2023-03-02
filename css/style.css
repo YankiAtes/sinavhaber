@@ -68,7 +68,7 @@ div{
 .news{
   background-color: red;
   float: left;
-  box-shadow: 1px 1px 15px rgba(0,0,0,1);
+  /*box-shadow: 1px 1px 15px rgba(0,0,0,1);*/
   flex: auto;
 }
 /*.news:hover{
@@ -129,11 +129,5 @@ div{
   color: black;
 }*/
 
-.topbanner{
-  margin-left: auto;
-  display: inline-block;
-  float: right;
-  margin-right: 2%;
-  margin-top: 1%;
-}
+
 
