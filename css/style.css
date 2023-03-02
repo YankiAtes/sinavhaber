@@ -1,0 +1,124 @@
+body{
+  background-color: rgb(224, 255, 255);
+  margin: 0;
+}
+.header-logo{
+  margin-right: 0;
+  overflow: hidden;
+  width: 100px;
+}
+.header-title{
+  font-family: arial;
+  font-size: 30pt;
+  font-weight: bold;
+  margin-left: 0;
+}
+.topnav{
+  overflow: hidden;
+  background-color: #005596;
+}
+.topnav a{
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  font-family: arial;
+}
+
+.topnav a:hover{
+  background-color: #ff7979;
+  color: black;
+}
+.topnav a:active{
+  /*background-color: #04AA6D;*/
+  background-color: #ff3838;
+  color: white;
+}
+
+/*.example{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: 80px;
+  font-family: arial;
+}
+.examplephone{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: 80px;
+  font-family: arial;
+  visibility: collapse;
+}
+
+@media only screen and (max-width:500px) {
+  .example{
+    visibility: collapse;
+  }
+  .examplephone{
+    visibility: visible;
+  }
+  
+}*/
+.news{
+  background-color: red;
+  float: left;
+  box-shadow: 1px 1px 15px rgba(0,0,0,1);
+}
+.news:hover{
+  box-shadow: 4px 4px 15px rgba(0,0,0,1);
+}
+#main-new{
+  margin-left: 10%;
+  margin-top: 2%;
+  width: 50%;
+  height: 650px;
+}
+
+#side-new1{
+  margin-left: 5%;
+  margin-top: 2%;
+  width: 30%;
+  height: 350px;
+}
+#side-new2{
+  margin-left: 5%;
+  margin-top: 1%;
+  width: 30%;
+  height: 280px;
+}
+#header-title-bigfont{
+  font-family: arial;
+  font-size: 37pt;
+}
+.news-section{
+  margin-left: 10%;
+  margin-top: 2%;
+  width: 20%;
+  height: 600px;
+  background-color: red;
+  float: left;
+  box-shadow: 1px 1px 15px rgba(0,0,0,1);
+  display: table;
+  transition: box-shadow 0.2s;
+  margin-bottom: 2%;
+}
+.news-section:hover{
+  box-shadow: 4px 4px 15px rgba(0,0,0,1);
+}
+.news-section-img{
+  text-align: center;
+  vertical-align: bottom;
+  width: 100%;
+  background-color: blue;
+  height: 400px;
+  cursor: pointer;
+}
+.news-section-text{
+  font-family: 'Shantell Sans', cursive;
+  font-size: 20pt;
+  text-align: center;
+  color: black;
+}
