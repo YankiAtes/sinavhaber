@@ -71,14 +71,15 @@ div{
   box-shadow: 1px 1px 15px rgba(0,0,0,1);
   flex: auto;
 }
-.news:hover{
+/*.news:hover{
   box-shadow: 4px 4px 15px rgba(0,0,0,1);
-}
+}*/
 #main-new{
   margin-left: 10%;
   margin-top: 2%;
   width: 50%;
   height: 650px;
+  margin-bottom: 5%;
 }
 
 #side-new1{
@@ -92,6 +93,7 @@ div{
   margin-top: 1%;
   width: 30%;
   height: 280px;
+  margin-bottom: 5%;
 }
 #header-title-bigfont{
   font-family: arial;
@@ -107,7 +109,7 @@ div{
   box-shadow: 1px 1px 15px rgba(0,0,0,1);
   display: table;
   transition: box-shadow 0.2s;
-  margin-bottom: 2%;
+  margin-bottom: 4%;
 }
 .news-section:hover{
   box-shadow: 4px 4px 15px rgba(0,0,0,1);
