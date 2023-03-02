@@ -1,5 +1,5 @@
 body{
-  background-color: rgb(229, 229, 229);
+  background-color: rgb(241, 241, 241);
   margin: 0;
 }
 .header-logo{
@@ -99,7 +99,7 @@ div{
   font-family: arial;
   font-size: 37pt;
 }
-.news-section{
+/*.news-section{
   margin-left: 10%;
   margin-top: 2%;
   width: 20%;
@@ -127,4 +127,12 @@ div{
   font-size: 20pt;
   text-align: center;
   color: black;
+}*/
+
+#main-new-text{
+  font-size: 20pt;
+  font-family: arial;
+  text-align: center;
+  margin-top: 60%;
+  margin-bottom: 5%;
 }

@@ -5,6 +5,8 @@
   height: auto;
   background-color: white;
   margin-left: 10%;
+  display: inline-block;
+  margin-top: 2%;
 }
 .news-div-title{
   font-family: arial;
@@ -45,7 +47,15 @@ margin-bottom: 2%;
 img{
   width: 100%;
   margin-left: 0;
-
+}
+.news-section-banner{
+  background-color: red;
+  width: auto;
+  height: 700px;
+  float: right;
+  margin-top: 8%;
+  margin-right: 5%;
+  
 }
 
 
