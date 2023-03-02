@@ -1,0 +1,51 @@
+.news-div{
+  border: none;
+  border-radius: 15px;
+  width: 60%;
+  height: auto;
+  background-color: white;
+  margin-left: 10%;
+}
+.news-div-title{
+  font-family: arial;
+  font-size: 32pt;
+  font-weight: bold;
+  margin-left: 2%;
+}
+.news-div-main{
+width: 40%;
+height: 400px;
+/*background-color: rgb(255, 210, 210);*/
+margin-left: 4%;
+margin-right: 4%;
+margin-top: 2%;
+display: inline-block;
+margin-bottom: 2%;
+
+}
+.news-image{
+ /* background-color: blue;*/
+  width: 100%;
+  height: 230px;
+}
+.news-div-text{
+  font-family: arial;
+  font-size: 15pt;
+  text-align: left;
+  width: 95%;
+  margin-top: 2%;
+}
+.news-div-text-title{
+  font-weight: bold;
+  font-family: arial;
+  text-align: left;
+  font-size: 14pt;
+  margin-top: 15%;
+}
+img{
+  width: 100%;
+  margin-left: 0;
+
+}
+
+
