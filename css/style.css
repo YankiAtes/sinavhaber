@@ -113,13 +113,19 @@ div{
     padding-left: 2%;
   }
   .header-logo{
-    width: 4vh;
+    width: 7vh;
+    margin-top: 0;
+    margin-bottom: 0;
   }
   .header-title{
-    font-size: 13pt;
+    font-size: 10pt;
+    margin-top: 0;
+    margin-bottom: 0;
   }
   #header-title-bigfont{
-    font-size: 15pt;
+    font-size: 12pt;
+    margin-top:0;
+    margin-bottom: 0;
   }
 }
 
