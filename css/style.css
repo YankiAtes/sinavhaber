@@ -96,6 +96,23 @@ div{
     margin: 0;
     margin-top: 5%;
   }
+  .topnav a{
+    display: inline-block;
+    font-weight: bold;
+    font-size: 1.5vh;
+    text-align: center;
+    vertical-align: baseline;
+    line-height:35px
+  }
+  .header-logo{
+    width: 4vh;
+  }
+  .header-title{
+    font-size: 15pt;
+  }
+  #header-title-bigfont{
+    font-size: 18pt;
+  }
 }
 
 img{
