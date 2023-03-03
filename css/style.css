@@ -99,12 +99,14 @@ div{
   .topnav a{
     display: inline-block;
     font-weight: bold;
-    font-size: 2vh;
+    font-size: 1.6vh;
+
     text-align: center;
     vertical-align: baseline;
-    line-height:35px;
+    line-height:250%;
     margin: 0;
-    padding: 0;
+    padding-top: 0;
+    padding-bottom: 0;
     padding-left: 2%;
   }
   .header-logo{
