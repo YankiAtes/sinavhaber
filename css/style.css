@@ -41,14 +41,12 @@ body{
 }
 .topnav a:active{
   /*background-color: #04AA6D;*/
-  background-color: #ff3838;
   color: white;
 }
 div{
   flex: auto;
 }
 .news{
-  background-color: red;
   float: left;
   flex: auto;
 }
@@ -76,30 +74,43 @@ div{
 }
 
 
-@media screen and (max-width: 800px){
-  
+@media screen and (max-width: 850px){
+
+   
   #main-new{
-    width: 100%;
-    height: 300px;
     margin: 0;
+    width: auto;
+    border: none;
+    height: 50vh;
+    margin-bottom: 2%;
     margin-top: 5%;
+    margin-left: 1.5vh;
+    margin-right: 1.5vh;   
   }
 
   #side-new1{
-    width: 100%;
-    height: 180px;
     margin: 0;
+    width: auto;
+    border: none;
+    height: 30vh;
+    margin-bottom: 2%;
     margin-top: 5%;
+    margin-left: 1.5vh;
+    margin-right: 1.5vh;    
   }
   #side-new2{
-    width: 100%;
-    height: 180px;
     margin: 0;
+    width: auto;
+    border: none;
+    height: 30vh;
+    margin-bottom: 2%;
     margin-top: 5%;
+    margin-left: 1.5vh;
+    margin-right: 1.5vh;   
   }
   .topnav{
     width: 100%;
-    height:fit-content;
+    height:fit-content
   }
   .topnav a{
     display: inline-block;
@@ -130,8 +141,10 @@ div{
   #header-title-bigfont{
     font-size: 12pt;
     margin-top:0;
-    margin-bottom: 0  ;
+    margin-bottom: 0;
   }
+
+  
 }
 
 img{
@@ -139,6 +152,8 @@ img{
   height: 100%;
   object-fit:fill;  
   cursor: pointer;
+  border: none;
+  border-radius: 7px;
 }
 
 
