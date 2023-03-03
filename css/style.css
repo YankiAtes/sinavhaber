@@ -96,11 +96,14 @@ div{
     margin: 0;
     margin-top: 5%;
   }
+  .topnav{
+    width: 100%;
+    height:fit-content;
+  }
   .topnav a{
     display: inline-block;
     font-weight: bold;
     font-size: 1.6vh;
-
     text-align: center;
     vertical-align: baseline;
     line-height:250%;
@@ -113,10 +116,10 @@ div{
     width: 4vh;
   }
   .header-title{
-    font-size: 15pt;
+    font-size: 13pt;
   }
   #header-title-bigfont{
-    font-size: 18pt;
+    font-size: 15pt;
   }
 }
 
