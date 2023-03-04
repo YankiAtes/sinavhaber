@@ -98,6 +98,14 @@ img{
     visibility: collapse;
     width: 0%;
   }
+
+  .news-image{
+    margin-top: 20vh;
+  }
+
+  .news-div-title{
+    margin-bottom: -15vh;
+  }
 }
 
 
