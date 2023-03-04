@@ -2,21 +2,28 @@ body{
   background-color: rgb(241, 241, 241);
   margin: 0;
 }
+td{
+  display: inline-block;
+  vertical-align: middle;
+}
+
 .header-logo{
-  margin-right: 0;
-  overflow: hidden;
-  width: fit-content;
-  height: 100%;
+  width: 15%;
+  height: auto;
+  vertical-align: middle;
 }
 .header-title{
   font-family: arial;
-  font-size: 18pt;
+  font-size: 15pt;
   font-weight: bold;
   margin-left: 0;
+  display: inline-block;
+  vertical-align: middle;
+
 }
 #header-title-bigfont{
   font-family: arial;
-  font-size: 22pt;
+  font-size: 18pt;
 }
 .topnav{
   overflow: hidden;
