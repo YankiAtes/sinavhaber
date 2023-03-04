@@ -58,5 +58,26 @@ img{
 }
 
 
+@media screen and (max-width: 850px){
+  .news-div{
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 7%;
+  }
+  .news-div-main{
+    margin: 0;
+    width: 96%;
+    margin-left: 2%;
+    margin-right: 2%;
+    display: block;
+  }  
+  .news-section-banner{
+    visibility: collapse;
+    width: 0%;
+  }
+}
+
+
 
 
