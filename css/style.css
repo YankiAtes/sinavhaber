@@ -5,17 +5,17 @@ body{
 .header-logo{
   margin-right: 0;
   overflow: hidden;
-  width: 7vh
+  width: 7vh;
 }
 .header-title{
   font-family: arial;
-  font-size: 20pt;
+  font-size: 18pt;
   font-weight: bold;
   margin-left: 0;
 }
 #header-title-bigfont{
   font-family: arial;
-  font-size: 24pt;
+  font-size: 22pt;
 }
 .topnav{
   overflow: hidden;
