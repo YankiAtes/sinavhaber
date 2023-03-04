@@ -27,7 +27,7 @@ body{
   float: left;
   color: white;
   text-align: center;
-  padding: 1.5vh 1.6vh;
+  padding: 1.5vh 6vh;
   padding-top: 1vh;
   padding-bottom: 1vh;
   text-decoration: none;
@@ -119,6 +119,7 @@ div{
     display: inline-block;
     font-weight: bold;
     font-size: 1.6vh;
+    padding: 1.5vh 1.6vh;
     text-align: center;
     vertical-align: baseline;
     line-height:250%;
