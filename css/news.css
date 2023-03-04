@@ -1,3 +1,5 @@
+
+
 .news-div{
   border: none;
   border-radius: 15px;
@@ -14,9 +16,10 @@
   font-weight: bold;
   margin-left: 2%;
 }
+
 .news-div-main{
 width: 40%;
-height: 400px;
+height: 40vh;
 margin-left: 4%;
 margin-right: 4%;
 margin-top: 2%;
@@ -26,7 +29,13 @@ margin-bottom: 2%;
 }
 .news-image{
   width: 100%;
-  height: 230px;
+  height: 25vh;
+  margin: 0;
+  transform: scale(1);
+  transition: transform 0.2s;
+}
+.news-image:hover{
+  transform: scale(1.05);
 }
 .news-div-text{
   font-family: arial;
@@ -36,12 +45,25 @@ margin-bottom: 2%;
   margin-top: 2%;
 }
 .news-div-text-title{
+  color: black;
+  text-decoration: none;
   font-weight: bold;
   font-family: arial;
   text-align: left;
   font-size: 14pt;
   margin-top: 5%;
+  margin-left: 0;
+  padding-left: 0;
+  cursor: pointer;
+  transition: color 0.2s;
+  
 }
+.news-div-text-title:hover{
+  color: red;  
+}
+
+  .news-div-main a:visited{ text-decoration: none;}
+  .news-div-main a:link{text-decoration: none;}
 img{
   width: 100%;
   margin-left: 0;
