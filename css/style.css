@@ -5,8 +5,8 @@ body{
 td{
   display: inline-block;
   vertical-align: middle;
-}
 
+}
 .header-logo{
   width: 15%;
   height: auto;
@@ -42,7 +42,6 @@ td{
   font-size: 17px;
   font-family: arial;
 }
-
 .topnav a:hover{
   background-color: #ff7979;
   color: black;
