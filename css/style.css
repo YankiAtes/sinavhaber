@@ -5,7 +5,8 @@ body{
 .header-logo{
   margin-right: 0;
   overflow: hidden;
-  width: 7vh;
+  width: fit-content;
+  height: 100%;
 }
 .header-title{
   font-family: arial;
