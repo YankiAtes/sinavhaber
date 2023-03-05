@@ -64,7 +64,7 @@ div{
 }
 
 #main-new{
-  margin-left: 10%;
+  margin-left: 6%;
   margin-top: 2%;
   width: 50%;
   height: 60vh;
@@ -94,6 +94,7 @@ div{
   border: none;
   border-radius: 7px;
 }
+
 
 
 @media screen and (max-width: 850px){
