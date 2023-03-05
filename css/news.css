@@ -33,6 +33,20 @@ margin-bottom: 2%;
   margin: 0;
   transform: scale(1);
   transition: transform 0.2s;
+  border: none;
+  object-fit:fill;  
+  cursor: pointer;
+  border: none;
+  border-radius: 7px;
+}
+img{
+  border: none;
+  width: 100%;
+  height: 100%;
+  object-fit:fill;  
+  cursor: pointer;
+  border: none;
+  border-radius: 7px;
 }
 .news-image:hover{
   transform: scale(1.05);
