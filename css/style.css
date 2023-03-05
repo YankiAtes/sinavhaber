@@ -56,6 +56,11 @@ div{
 .news{
   float: left;
   flex: auto;
+  transform: scale(1);
+  transition: transform 0.2s;
+}
+.news:hover{
+  transform: scale(1.05);
 }
 
 #main-new{
@@ -65,6 +70,7 @@ div{
   height: 60vh;
   margin-bottom: 5%;
 }
+
 
 #side-new1{
   margin-left: 5%;
