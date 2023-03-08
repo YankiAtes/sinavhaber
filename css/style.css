@@ -18,7 +18,15 @@ td{
   opacity: 0.7;
 }
 
-
+#header-caller{
+  width: 100%;
+  height: max-content;
+  padding: 0;
+  margin: 0;
+}
+#header-called{
+  width: 100%;
+}
 .header-title{
   font-family: arial;
   font-size: 2vh;
