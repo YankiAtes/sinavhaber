@@ -20,7 +20,7 @@ td{
 
 
 .header-title{
-  font-family: 'roboto';
+  font-family: arial;
   font-size: 2vh;
   font-weight: bold;
   margin-left: 0;
@@ -40,7 +40,7 @@ td{
   cursor: pointer;
 }
 #header-title-bigfont{
- font-family: 'roboto';
+ font-family: arial;
   font-size: 2.5vh;
 }
 .topnav{
@@ -59,7 +59,7 @@ td{
   padding-bottom: 1vh;
   text-decoration: none;
   font-size: 1.4vh;
-  font-family: 'Poppins';
+  font-family: arial;
   font-weight: bolder;
   transition: color 0.15s,background-color 0.15s;
 }
@@ -163,7 +163,7 @@ div{
   .topnav a{
     display: inline-block;
     font-weight: bold;
-    font-size: 1.6vh;
+    font-size: 10px;
     padding: 1.5vh 0.6vh;
     text-align: center;
     vertical-align: baseline;
