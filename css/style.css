@@ -58,7 +58,7 @@ td{
   padding-top: 0.8vh;
   padding-bottom: 1vh;
   text-decoration: none;
-  font-size: 1.4vh;
+  font-size: 18px;
   font-family: arial;
   font-weight: bolder;
   transition: color 0.15s,background-color 0.15s;
@@ -158,7 +158,7 @@ div{
   }
   .topnav{
     width: 100%;
-    height:fit-content
+    height:fit-content;
   }
   .topnav a{
     display: inline-block;
