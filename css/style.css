@@ -127,13 +127,82 @@ div{
 }
 
 
+#footer{
+  width: 100%;
+  height: auto;
+  background-color: #9e9e9e;
+  vertical-align: bottom;
+  display: flex;
+  margin-top: 50vh;
+}
+#footer-left{
+  display: block;
+  float: left;
+  width: 80%;
+}
+#footer-right{
+  display: block;
+  float: right;
+  width: 20%;
+  margin-right: 10%;
+}
+#footer-right p{
+  font-family: arial;
+  font-weight: 200;
+}
+#footer-right #footer-about-title{
+  font-weight: bold;
+  color: #2d2d2d;
+  font-size: 15px;
+}
+#footer-right #footer-about{
+  font-size: 13px;
+  color: #3a3a3a;
+}
+#footer-image-div{
+  display: block;
+}
+#footer-image{
+  width: 22vh;
+  height: auto;
+  margin: 20px 20px;
+  margin-bottom: 0;
+  text-align: left;
+}
+#footer-links{
+  margin: 20px 20px;
+  padding: 0;
+}
+#footer-links a{
+  display: inline-block;
+  line-height: 1.8;
+  font-weight: 400;
+  text-decoration: none;
+  color: white;
+  font-family: arial;
+}
+#footer-links a:before{
+  content: "|";
+  font-weight: 300;
+  font-size: 20px;
+  left: 0;
+  color: white;
+  display: inline-block;
+  padding-right: 5px;
+  text-decoration: none;
+  font-family: arial;
+}
+#footer-links #link-1:before{
+  content: none;
+}
 
 @media screen and (max-width: 950px){
   #main-new{
     margin: 0;
     width: 96%;
     border: none;
-    height: 50vh;
+    /*height: 50vh;*/
+    height: auto;
     margin-bottom: 2%;
     margin-top: 5%;
     margin-left: 2%;
@@ -145,7 +214,8 @@ div{
     width: 96%;
     text-align: center;
     border: none;
-    height: 30vh;
+    /*height: 30vh;*/
+    height: auto;
     margin-bottom: 2%;
     margin-top: 5%;
     margin-left: 2%;
@@ -156,7 +226,8 @@ div{
     width:96%;
     text-align: center;
     border: none;
-    height: 30vh;
+    /*height: 30vh;*/
+    height: auto;
     margin-bottom: 2%;
     margin-top: 5%;
     margin-left: 2%;
@@ -198,6 +269,15 @@ div{
     font-size: 12pt;
     margin-top:0;
     margin-bottom: 0;
+  }
+  #footer-left{
+    width: 100%;
+  }
+  #footer-right{
+    width: 100%;
+  }
+  #footer-links #link-1:before{
+    content: "|";
   }
 }
 

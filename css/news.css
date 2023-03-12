@@ -9,7 +9,7 @@
   margin-left: 10%;
   display: inline-block;
   margin-top: 2%;
-  margin-bottom: 4%;
+  margin-bottom: 0;
 }
 .news-div-title{
   font-family: 'Poppins';
@@ -18,7 +18,9 @@
   margin-left: 2%;
   margin-bottom: 0;
 }
-
+#footer{
+  margin-top: 5% !important;
+}
 .news-div-main{
 width: 40%;
 height: fit-content;
