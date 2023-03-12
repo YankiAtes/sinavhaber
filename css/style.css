@@ -176,7 +176,7 @@ div{
   padding: 0;
 }
 #footer-links a{
-  display: block;
+  display: inline-block;
   line-height: 1.8;
   font-weight: 400;
   text-decoration: none;
@@ -277,6 +277,9 @@ div{
   }
   #footer-right{
     width: 100%;
+  }
+  #footer-links a{
+    display: block;
   }
   #footer-links #link-1:before{
     content: "|";
