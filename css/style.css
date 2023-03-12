@@ -176,7 +176,7 @@ div{
   padding: 0;
 }
 #footer-links a{
-  display: inline-block;
+  display: block;
   line-height: 1.8;
   font-weight: 400;
   text-decoration: none;
