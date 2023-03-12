@@ -281,6 +281,10 @@ div{
   #footer-links #link-1:before{
     content: "|";
   }
+  #footer-links{
+    width: 50%;
+    
+  }
 }
 
 /*@media screen and (max-height: 500px){
