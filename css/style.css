@@ -173,6 +173,7 @@ div{
 }
 #footer-links{
   margin: 2vh 2vh;
+  margin-left: 4%;
   padding: 0;
 }
 #footer-links a{
@@ -277,6 +278,7 @@ div{
   #footer{
     margin-top: 10vh;
     display: inline-block;
+    width: 100%;
   }
   #footer-left{
     
@@ -305,11 +307,14 @@ div{
   }
   #footer-about-title{
     margin-top: 4vh;
-    margin-left: 2vh;
+    width: 96%;
+    margin-left: 4%;
   }
   #footer-about{
-    width: 100%;
-    margin-left: 2vh;
+    width: 94%;
+    margin-left: 4%;
+    margin-right: 2%;
+    
   }
 }
 
