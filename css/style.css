@@ -153,12 +153,12 @@ div{
 }
 #footer-right #footer-about-title{
   font-weight: bold;
-  color: #2d2d2d;
+  color: #202020;
   font-size: 15px;
 }
 #footer-right #footer-about{
   font-size: 13px;
-  color: #3a3a3a;
+  color: #202020;
 }
 #footer-image-div{
   display: block;
@@ -201,6 +201,7 @@ div{
 }
 #footer-about{
   width: 100%;
+  
 }
 @media screen and (max-width: 950px){
   #main-new{
