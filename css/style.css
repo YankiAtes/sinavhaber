@@ -275,7 +275,8 @@ div{
     margin-bottom: 0;
   }
   #footer{
-    position: relative;
+    margin-top: 10vh;
+    display: inline-block;
   }
   #footer-left{
     
@@ -285,7 +286,7 @@ div{
     height: fit-content;
   }
   #footer-right{
-    width: min-content;
+    width: 100%;
     float: none;
     display: block;
     height: fit-content;
@@ -294,7 +295,7 @@ div{
     width: 30vh;
   }
   #footer-links a{
-    display: inline-block;
+    display: block;
   }
   #footer-links #link-1:before{
     content: "|";
@@ -302,8 +303,13 @@ div{
   #footer-links{
     width: 50%;
   }
+  #footer-about-title{
+    margin-top: 4vh;
+    margin-left: 2vh;
+  }
   #footer-about{
     width: 100%;
+    margin-left: 2vh;
   }
 }
 
