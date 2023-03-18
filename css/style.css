@@ -138,13 +138,13 @@ div{
 #footer-left{
   display: block;
   float: left;
-  width: 80%;
+  width: 78%;
 }
 #footer-right{
   display: block;
   float: right;
   width: 20%;
-  margin-right: 10%;
+  margin-right: 2%;
 }
 #footer-right p{
   font-family: arial;
@@ -197,7 +197,9 @@ div{
 #footer-links #link-1:before{
   content: none;
 }
-
+#footer-about{
+  width: 100%;
+}
 @media screen and (max-width: 950px){
   #main-new{
     margin: 0;
@@ -272,21 +274,36 @@ div{
     margin-top:0;
     margin-bottom: 0;
   }
+  #footer{
+    position: relative;
+  }
   #footer-left{
+    
     width: 100%;
+    float: none;
+    display: block;
+    height: fit-content;
   }
   #footer-right{
-    width: 100%;
+    width: min-content;
+    float: none;
+    display: block;
+    height: fit-content;
+  }
+  #footer-image{
+    width: 30vh;
   }
   #footer-links a{
-    display: block;
+    display: inline-block;
   }
   #footer-links #link-1:before{
     content: "|";
   }
   #footer-links{
     width: 50%;
-    
+  }
+  #footer-about{
+    width: 100%;
   }
 }
 
