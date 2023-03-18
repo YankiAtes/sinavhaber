@@ -118,6 +118,9 @@ img{
     margin-right: 2%;
     display: block;
   }  
+  .news-image:hover{
+    transform: scale(1.00);
+  }
   .news-section-banner{
     visibility: collapse;
     width: 0%;
