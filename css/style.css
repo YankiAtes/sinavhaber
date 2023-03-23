@@ -1,32 +1,31 @@
-body{
+body {
   background-color: rgb(241, 241, 241);
   margin: 0;
 }
-td{
+td {
   display: inline-block;
   vertical-align: middle;
-
 }
-.header-logo{
+.header-logo {
   width: 15%;
   height: auto;
   vertical-align: middle;
   transition: opacity 0.2s;
 }
-.header-logo:hover{
+.header-logo:hover {
   opacity: 0.7;
 }
 
-#header-caller{
+#header-caller {
   width: 100%;
   height: max-content;
   padding: 0;
   margin: 0;
 }
-#header-called{
+#header-called {
   width: 100%;
 }
-.header-title{
+.header-title {
   font-family: arial;
   font-size: 2vh;
   font-weight: bold;
@@ -36,27 +35,26 @@ td{
   color: black;
   transition: color 0.2s;
 }
-.header-title:hover{
-  color: #ff3232 ;
-
+.header-title:hover {
+  color: #ff3232;
 }
-#header-title-div{
+#header-title-div {
   display: inline-block;
-  color: black ;
+  color: black;
   text-decoration: none;
   cursor: pointer;
 }
-#header-title-bigfont{
- font-family: arial;
+#header-title-bigfont {
+  font-family: arial;
   font-size: 2.5vh;
 }
-.topnav{
+.topnav {
   overflow: hidden;
   background-color: #005596;
   width: 100%;
   height: fit-content;
 }
-.topnav a{
+.topnav a {
   text-align: center;
   float: left;
   color: white;
@@ -68,33 +66,34 @@ td{
   font-size: 18px;
   font-family: arial;
   font-weight: bolder;
-  transition: color 0.15s,background-color 0.15s;
+  transition: color 0.15s, background-color 0.15s;
 }
-.topnav a:hover{
+
+.topnav a:hover {
   background-color: #ff7979;
   color: black;
 }
-.topnav a:active{
+.topnav a:active {
   /*background-color: #04AA6D;*/
   color: white;
 }
-#brand-image{
+#brand-image {
   text-decoration: none;
 }
-div{
+div {
   flex: auto;
 }
-.news{  
+.news {
   float: left;
   flex: auto;
   transform: scale(1);
   transition: transform 0.2s;
 }
-.news:hover{
+.news:hover {
   transform: scale(1.05);
 }
 
-#main-new{
+#main-new {
   margin-left: 6%;
   margin-top: 2%;
   width: 50%;
@@ -102,82 +101,80 @@ div{
   margin-bottom: 5%;
 }
 
-
-#side-new1{
+#side-new1 {
   margin-left: 5%;
   margin-top: 2%;
   width: 30%;
   height: 30vh;
 }
-#side-new2{ 
+#side-new2 {
   margin-left: 5%;
   margin-top: 1%;
   width: 30%;
   height: 28vh;
-  margin-bottom: 5%; 
+  margin-bottom: 5%;
 }
 
-.index-page-news-image{
+.index-page-news-image {
   width: 100%;
   height: 100%;
-  object-fit:fill;  
+  object-fit: fill;
   cursor: pointer;
   border: none;
   border-radius: 7px;
 }
 
-
-#footer{
+#footer {
   width: 100%;
   height: auto;
   background-color: #9e9e9e;
   vertical-align: bottom;
-  display: flex;
-  margin-top: 50vh;
+  display: inline-block;
+  margin-top: 2%;
 }
-#footer-left{
+#footer-left {
   display: block;
   float: left;
   width: 78%;
 }
-#footer-right{
+#footer-right {
   display: block;
   float: right;
   width: 20%;
   margin-right: 2%;
 }
-#footer-right p{
+#footer-right p {
   font-family: arial;
   font-weight: 200;
   cursor: default;
 }
-#footer-right #footer-about-title{
+#footer-right #footer-about-title {
   font-weight: bold;
   color: #202020;
   font-size: 15px;
 }
-#footer-right #footer-about{
+#footer-right #footer-about {
   font-size: 13px;
   color: #202020;
 }
-#footer-image-div{
+#footer-image-div {
   display: block;
 }
-#footer-image{
+#footer-image {
   width: 220px;
   height: auto;
   margin-top: 1%;
   margin-left: 3%;
   margin-bottom: 0;
   text-align: left;
-  cursor:default;
+  cursor: default;
 }
-#footer-links{
+#footer-links {
   margin-top: 0;
   margin-left: 4%;
   padding: 0;
 }
-#footer-links a{
+#footer-links a {
   display: inline-block;
   line-height: 1.8;
   font-weight: 400;
@@ -185,7 +182,7 @@ div{
   color: white;
   font-family: arial;
 }
-#footer-links a:before{
+#footer-links a:before {
   content: "|";
   font-weight: 300;
   font-size: 2vh;
@@ -196,15 +193,14 @@ div{
   text-decoration: none;
   font-family: arial;
 }
-#footer-links #link-1:before{
+#footer-links #link-1:before {
   content: none;
 }
-#footer-about{
+#footer-about {
   width: 100%;
-  
 }
-@media screen and (max-width: 950px){
-  #main-new{
+@media screen and (max-width: 950px) {
+  #main-new {
     margin: 0;
     width: 96%;
     border: none;
@@ -213,10 +209,10 @@ div{
     margin-bottom: 2%;
     margin-top: 5%;
     margin-left: 2%;
-    margin-right: 2%;   
+    margin-right: 2%;
   }
 
-  #side-new1{
+  #side-new1 {
     margin: 0;
     width: 96%;
     text-align: center;
@@ -226,11 +222,11 @@ div{
     margin-bottom: 2%;
     margin-top: 5%;
     margin-left: 2%;
-    margin-right: 2%;    
+    margin-right: 2%;
   }
-  #side-new2{
+  #side-new2 {
     margin: 0;
-    width:96%;
+    width: 96%;
     text-align: center;
     border: none;
     /*height: 30vh;*/
@@ -238,85 +234,82 @@ div{
     margin-bottom: 2%;
     margin-top: 5%;
     margin-left: 2%;
-    margin-right: 2%;   
-
+    margin-right: 2%;
   }
-  .topnav{
+  .topnav {
     width: 100%;
-    height:fit-content;
+    height: fit-content;
   }
-  .topnav a{
+  .topnav a {
     display: inline-block;
     font-weight: bold;
     font-size: 10px;
     padding: 1.5vh 0.6vh;
     text-align: center;
     vertical-align: baseline;
-    line-height:250%;
+    line-height: 250%;
     margin: 0;
     padding-top: 0;
     padding-bottom: 0;
     padding-left: 2%;
   }
-  .header-logo{
+  .header-logo {
     width: 7vh;
     margin-top: 0;
     margin-bottom: 0;
     padding-top: 0;
     padding-bottom: 0;
   }
-  .header-title{
+  .header-title {
     font-size: 10pt;
     margin-top: 0;
     margin-bottom: 0;
     padding-top: 0;
     padding-bottom: 0;
   }
-  #header-title-bigfont{
+  #header-title-bigfont {
     font-size: 12pt;
-    margin-top:0;
+    margin-top: 0;
     margin-bottom: 0;
   }
-  #footer{
+  #footer {
     margin-top: 10vh;
     display: inline-block;
     width: 100%;
   }
-  #footer-left{
-    
+  #footer-left {
     width: 100%;
     float: none;
     display: block;
     height: fit-content;
   }
-  #footer-right{
+  #footer-right {
     width: 100%;
     float: none;
     display: block;
     height: fit-content;
   }
-  #footer-image{
+  #footer-image {
     width: 30vh;
   }
-  #footer-links a{
+  #footer-links a {
     display: block;
   }
-  #footer-links #link-1:before{
+  #footer-links #link-1:before {
     content: "|";
   }
-  #footer-links{
+  #footer-links {
     width: 50%;
   }
-  #footer-about-title{
+  #footer-about-title {
     margin-top: 4vh;
     width: 96%;
     margin-left: 4%;
   }
-  #footer-about{
+  #footer-about {
     width: 94%;
     margin-left: 4%;
     margin-right: 2%;
-    
   }
 }
 
@@ -338,5 +331,3 @@ div{
     font-size: 10px;
   }
 }*/
-
-
