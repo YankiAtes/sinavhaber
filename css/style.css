@@ -15,6 +15,9 @@ td {
 .header-logo:hover {
   opacity: 0.7;
 }
+a{
+  text-decoration: none;
+}
 
 #header-caller {
   width: 100%;
@@ -93,6 +96,9 @@ div {
   transform: scale(1.05);
 }
 
+
+
+
 #main-new {
   margin-left: 6%;
   margin-top: 2%;
@@ -106,6 +112,21 @@ div {
   margin-top: 2%;
   width: 30%;
   height: 30vh;
+}
+#side-new1:hover{
+  transform: scale(1.00);
+}
+#sidenew1-img{
+  height: 25vh;
+}
+#okulumuz{
+  font-family: arial;
+  font-weight: bold;
+  color:#ff7979;
+  text-align: center;
+  margin-top: 0;
+  font-size: 20px;
+  margin-bottom: 0;
 }
 #side-new2 {
   margin-left: 5%;
@@ -224,6 +245,14 @@ div {
     margin-left: 2%;
     margin-right: 2%;
   }
+  #sidenew1-img{
+    width: 100%;
+    height: auto;
+  }
+  #okulumuz{
+    font-size: 35px;
+  }
+
   #side-new2 {
     margin: 0;
     width: 96%;
