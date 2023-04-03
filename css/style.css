@@ -112,9 +112,12 @@ div {
   margin-top: 2%;
   width: 30%;
   height: 30vh;
+  transition: opacity 0.2s;
+  
 }
 #side-new1:hover{
   transform: scale(1.00);
+  opacity: 0.8;
 }
 #sidenew1-img{
   height: 25vh;
@@ -127,6 +130,7 @@ div {
   margin-top: 0;
   font-size: 20px;
   margin-bottom: 0;
+  cursor: pointer;
 }
 #side-new2 {
   margin-left: 5%;
