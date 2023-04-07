@@ -32,10 +32,13 @@
 }
 .image-new{
   text-align: center;
-  width: 94%;  
+  width: 70%;  
   margin-left: 3%;
   margin-right: 3%;
   object-fit: fill;
+  margin: auto;
+  display: block;
+
 }
 
 @media screen and (max-width: 850px){
@@ -44,5 +47,8 @@
     height: max-content;
     margin-left: 2%;
     margin-right: 2% ;
+  }
+  .image-new{
+    width: 90%;
   }
 }
