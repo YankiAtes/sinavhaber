@@ -15,7 +15,7 @@ td {
 .header-logo:hover {
   opacity: 0.7;
 }
-a{
+a {
   text-decoration: none;
 }
 
@@ -96,9 +96,6 @@ div {
   transform: scale(1.05);
 }
 
-
-
-
 #main-new {
   margin-left: 6%;
   margin-top: 2%;
@@ -113,19 +110,18 @@ div {
   width: 30%;
   height: 30vh;
   transition: opacity 0.2s;
-  
 }
-#side-new1:hover{
-  transform: scale(1.00);
+#side-new1:hover {
+  transform: scale(1);
   opacity: 0.8;
 }
-#sidenew1-img{
+#sidenew1-img {
   height: 30vh;
 }
-#okulumuz{
+#okulumuz {
   font-family: arial;
   font-weight: bold;
-  color:#ff7979;
+  color: #ff7979;
   text-align: center;
   margin-top: 0;
   font-size: 20px;
@@ -138,6 +134,14 @@ div {
   width: 30%;
   height: 28vh;
   margin-bottom: 5%;
+}
+.side-new-2-text {
+  color: black;
+  font-family: arial;
+  font-weight: bold;
+  margin: 0;
+  text-align: center;
+  font-size: 3vh;
 }
 
 .index-page-news-image {
@@ -249,11 +253,11 @@ div {
     margin-left: 2%;
     margin-right: 2%;
   }
-  #sidenew1-img{
+  #sidenew1-img {
     width: 100%;
     height: auto;
   }
-  #okulumuz{
+  #okulumuz {
     font-size: 35px;
   }
 

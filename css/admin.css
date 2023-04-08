@@ -1,0 +1,93 @@
+body {
+  background-color: azure;
+}
+
+#wrapper1 {
+  width: 500px;
+  height: 600px;
+  border: none;
+  border-width: 2px;
+  border-radius: 10px;
+  background-color: rgb(84, 118, 134);
+  display: block;
+  margin: auto;
+  margin-top: 10vh;
+}
+#wrapper2 {
+  vertical-align: top;
+  background-color: rgb(84, 118, 134);
+  width: 90%;
+  height: fit-content;
+  margin: auto;
+  margin-top: 1vh;
+}
+#admin-title-text {
+  font-family: arial;
+  font-size: 20pt;
+  text-align: center;
+  font-weight: bold;
+}
+#admin-top-image {
+  width: 50%;
+  margin: auto;
+  display: block;
+}
+.wrapper-login-box {
+  width: 90%;
+  margin: auto;
+}
+.litle-text {
+  font-family: arial;
+  text-align: center;
+}
+.enterbox {
+  border: none;
+  outline: none;
+  background-color: rgb(84, 118, 134);
+  font-size: 20px;
+  width: 55%;
+  margin: auto;
+  display: block;
+  margin-bottom: 8px;
+  color: white;
+  font-weight: bold;
+}
+.enterbox:focus {
+  border: none;
+  outline: none;
+}
+.seperator {
+  width: 60%;
+  margin: 0;
+  margin-top: 1vh;
+  height: 2px;
+  background-color: white;
+  margin: auto;
+}
+
+#wrapper3 {
+  width: min-content;
+  margin: auto;
+  margin-top: 5vh;
+}
+#login {
+  width: 150px;
+  border-color: #0db8de;
+  color: #0db8de;
+  border-style: solid;
+  background-color: rgb(84, 118, 134);
+  font-weight: bold;
+  font-family: arial;
+  letter-spacing: 1px;
+  border-radius: 0px;
+  height: 50px;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+#login:hover {
+  background-color: #0db8de;
+  color: white;
+}
+#login:active {
+  background-color: #0a8fad;
+  border-color: #0a8fad;
+}

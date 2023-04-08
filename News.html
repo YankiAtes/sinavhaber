@@ -66,13 +66,70 @@
     <main>
       <div class="news-div">
         <p class="news-div-title">Haberler</p>
-        
 
         <!-- NEW BOX -->
         <div class="news-div-main" class="left">
-          <a href="Haberler/sanattanhaberler1.html">
+          <a href="Haberler/1/bilimdenhaberler1.html">
             <div class="news-image">
-              <img src="img/sanattanhaberler1.png" alt="" />
+              <img src="img/1/enfazlauydusuolangezegendegisti.PNG" alt="" />
+            </div>
+            <p class="news-div-text-title">Bilimden Haberler</p>
+          </a>
+          <p class="news-div-text"></p>
+
+          <p class="news-div-date">08.04.2023</p>
+        </div>
+        <!-- NEW BOX FINISH -->
+
+        <!-- NEW BOX -->
+        <div class="news-div-main" class="left">
+          <a href="Haberler/1/buyuksusorunu.html">
+            <div class="news-image">
+              <img src="img/1/büyüksusorunu.png" alt="" />
+            </div>
+            <p class="news-div-text-title">Büyük Su Sorunu</p>
+          </a>
+          <p class="news-div-text"></p>
+
+          <p class="news-div-date">08.04.2023</p>
+        </div>
+        <!-- NEW BOX FINISH -->
+
+        <!-- NEW BOX -->
+        <div class="news-div-main" class="left">
+          <a href="Haberler/1/depremsonrasineleryapilmali.html">
+            <div class="news-image">
+              <img src="img/1/depremsonrasineleryapilmali.png" alt="" />
+            </div>
+            <p class="news-div-text-title">Deprem Sonrası Neler Yapılmalı</p>
+          </a>
+          <p class="news-div-text"></p>
+
+          <p class="news-div-date">08.04.2023</p>
+        </div>
+        <!-- NEW BOX FINISH -->
+
+        <!-- NEW BOX -->
+        <div class="news-div-main" class="left">
+          <a href="Haberler/1/depreminyaralarinihepberabersariyoruz.html">
+            <div class="news-image">
+              <img src="img/1/depreminyaralariniberagbersariyoruz.png" alt="" />
+            </div>
+            <p class="news-div-text-title">
+              DEPREMİN YARALARINI HEP BİRLİKTE SARIYORUZ...
+            </p>
+          </a>
+          <p class="news-div-text"></p>
+
+          <p class="news-div-date">08.04.2023</p>
+        </div>
+        <!-- NEW BOX FINISH -->
+
+        <!-- NEW BOX -->
+        <div class="news-div-main" class="left">
+          <a href="Haberler/1/sanattanhaberler1.html">
+            <div class="news-image">
+              <img src="img/1/sanattanhaberler1.png" alt="" />
             </div>
             <p class="news-div-text-title">Sanattan Haberler</p>
           </a>
@@ -81,13 +138,14 @@
             savaşmak için The Wild Escape adlı sanat projesini başlattı...
           </p>
 
-          <p class="news-div-date">05.04.2023</p>
+          <p class="news-div-date">08.04.2023</p>
         </div>
+        <!-- NEW BOX FINISH -->
 
         <!-- NEW BOX -->
         <div class="news-div-main" class="left">
           <a href="#nocontent">
-            <div class="news-image"><img src="img/SACMUN.png" alt="" /></div>
+            <div class="news-image"><img src="img/1/SACMUN.png" alt="" /></div>
             <p class="news-div-text-title"></p>
           </a>
           <p class="news-div-text">
@@ -161,5 +219,33 @@
         </div>
       </div>
     </footer>
+    <!--!!!!!!!!!!!!!!!!!-->
+    <!--FIREBASE DATABASE-->
+    <!--!!!!!!!!!!!!!!!!!-->
+
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyDo9lGR-HEf5z0SHKLfV1XFxZY6NzD_npE",
+        authDomain: "sinavhaber-6f8882.firebaseapp.com",
+        projectId: "sinavhaber-6f8882",
+        storageBucket: "sinavhaber-6f8882.appspot.com",
+        messagingSenderId: "202358867428",
+        appId: "1:202358867428:web:619275d5230f9f08ef73f1",
+        measurementId: "G-R8PBQ3RB0H",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
+    <!--!!!!!!!!!!!!!!!!!-->
   </body>
 </html>

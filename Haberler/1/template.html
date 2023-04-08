@@ -5,12 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sınav Haber</title>
-    <link rel="stylesheet" href="../css/template.css" />
-    <link rel="stylesheet" href="../css/style.css" />
-    <link rel="icon" href="../img/logo2.png" />
-   
-    
-    <link rel="icon" href="img/logo2.png" />
+    <link rel="stylesheet" href="../../css/template.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="icon" href="../../img/logo2.png" />
+
+    <link rel="icon" href="../../img/logo2.png" />
 
     <!--FONTS-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -33,12 +32,16 @@
       <table>
         <tr>
           <td>
-            <a href="../index.html" id="brand-image">
-              <img class="header-logo" src="../img/logo2.png" alt="logo-image" />
+            <a href="../../index.html" id="brand-image">
+              <img
+                class="header-logo"
+                src="../../img/logo2.png"
+                alt="logo-image"
+              />
             </a>
 
             <div id="header-title-div">
-              <a href="../index.html">
+              <a href="../../index.html">
                 <p class="header-title">SINAV HABER - ÇEKMEKÖY</p>
               </a>
             </div>
@@ -48,9 +51,9 @@
       </table>
 
       <div class="topnav">
-        <a id="topnav-home" href="../index.html">Ana Sayfa</a>
-        <a href="../News.html">Haberler</a>
-        <a href="../NewsArchive.html">Arşiv</a>
+        <a id="topnav-home" href="../../index.html">Ana Sayfa</a>
+        <a href="../../News.html">Haberler</a>
+        <a href="../../NewsArchive.html">Arşiv</a>
         <a href="#about">Hakkımızda</a>
       </div>
     </header>
@@ -62,7 +65,7 @@
           Molestias maxime, rerum saepe ex quibusdam repudiandae quaerat modi
           hic.
         </p>
-        <img class="image-new" src="../img/sinavkoleji2.png" alt="" />
+        <img class="image-new" src="../../img/sinavkoleji2.png" alt="" />
         <p class="new-text">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem
           facere illo impedit vitae! Accusamus, velit dignissimos consectetur
@@ -71,7 +74,7 @@
           animi alias odio at ipsam labore quae perferendis iure repellat, vero
           nulla rerum beatae aperiam ut. Qui placeat beatae quasi?
         </p>
-        <img src="/img/books.jpg" alt="" class="image-new" />
+        <img src="../../img/books.jpg" alt="" class="image-new" />
         <p class="new-text">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla
           inventore laudantium quis cupiditate exercitationem placeat, modi
@@ -98,25 +101,54 @@
         <div id="footer-left">
           <div id="footer-image-div">
             <img
-              src="../img/sinav_cekmekoy_logo trans.png"
+              src="../../img/sinav_cekmekoy_logo trans.png"
               alt="Sınav Koleji"
               id="footer-image"
             />
           </div>
           <p id="footer-links">
-            <a href="index.html" id="link-1">Ana Sayfa</a>
-            <a href="News.html">Haberler</a>
-            <a href="NewsArchive.html">Arşiv</a>
+            <a href="../../index.html" id="link-1">Ana Sayfa</a>
+            <a href="../../News.html">Haberler</a>
+            <a href="../../NewsArchive.html">Arşiv</a>
             <a href="#about">Hakkımızda</a>
           </p>
         </div>
         <div id="footer-right">
           <p id="footer-about-title">Hakkımızda</p>
           <p id="footer-about">
-            Bu internet sitesi Sınav Koleji Çekmeköy Kampüsü Lise Öğrencileri Derin Yankı Ateş ve Yiğit Memiş Tarafından Yapılmıştır.
+            Bu internet sitesi Sınav Koleji Çekmeköy Kampüsü Lise Öğrencileri
+            Derin Yankı Ateş ve Yiğit Memiş Tarafından Yapılmıştır.
           </p>
         </div>
       </div>
     </footer>
+    <!--!!!!!!!!!!!!!!!!!-->
+    <!--FIREBASE DATABASE-->
+    <!--!!!!!!!!!!!!!!!!!-->
+
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyDo9lGR-HEf5z0SHKLfV1XFxZY6NzD_npE",
+        authDomain: "sinavhaber-6f8882.firebaseapp.com",
+        projectId: "sinavhaber-6f8882",
+        storageBucket: "sinavhaber-6f8882.appspot.com",
+        messagingSenderId: "202358867428",
+        appId: "1:202358867428:web:619275d5230f9f08ef73f1",
+        measurementId: "G-R8PBQ3RB0H",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
+    <!--!!!!!!!!!!!!!!!!!-->
   </body>
 </html>

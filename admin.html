@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sınav Haber</title>
+    <title>Admin Paneli</title>
+    <link rel="stylesheet" href="css/admin.css" />
     <link rel="stylesheet" href="css/style.css" />
-
-    <link rel="icon" href="img/logo2.png" />
   </head>
+
   <body>
     <header>
       <table>
@@ -29,71 +29,33 @@
       </table>
 
       <div class="topnav">
-        <a id="topnav-home" href="index.html">Ana Sayfa</a>
+        <a id="topnav-home" href="admin.php">Ana Sayfa</a>
         <a href="News.html">Haberler</a>
         <a href="NewsArchive.html">Arşiv</a>
         <a href="#about">Hakkımızda</a>
       </div>
     </header>
-
-    <!--Ana sayfa ana haber-->
     <main>
-      <div class="news" id="main-new">
-        <a href="Haberler/1/depremhakkinda.html">
-          <img
-            class="index-page-news-image"
-            src="img/1/depremsiddetinasilolculuyor.png"
-            alt=""
-          />
-        </a>
-      </div>
-
-      <div class="news" id="side-new1">
-        <a href="http://www.cekmekoysinavkoleji.com/">
-          <img
-            id="sidenew1-img"
-            class="index-page-news-image"
-            src="img/kampus.jpg"
-          />
-        </a>
-      </div>
-
-      <!--Ana sayfa küçük haber-->
-      <div class="news" id="side-new2">
-        <a href="#haberx">
-          <img class="index-page-news-image" src="img/1/SACMUN.png" alt="" />
-          <p class="side-new-2-text">SEV Amerikan Kolejinde MUN</p>
-        </a>
+      <div id="wrapper1">
+        <div id="overallwrapper">
+          <div id="wrapper2">
+            <img src="img/sinav_cekmekoy_logo trans.png" id="admin-top-image" />
+            <p id="admin-title-text">Admin Giriş</p>
+          </div>
+          <div class="wrapper-login-box">
+            <p class="litle-text">Kullanıcı Adı</p>
+            <input type="text" class="enterbox" />
+            <hr class="seperator" />
+          </div>
+          <div class="wrapper-login-box" style="margin-top: 8vh">
+            <p class="litle-text">Şifre</p>
+            <input type="password" class="enterbox" />
+            <hr class="seperator" />
+          </div>
+          <div id="wrapper3"><button id="login">Giriş Yap</button></div>
+        </div>
       </div>
     </main>
-
-    <footer>
-      <div id="footer">
-        <div id="footer-left">
-          <div id="footer-image-div">
-            <img
-              src="img/sinav_cekmekoy_logo trans.png"
-              alt="Sınav Koleji"
-              id="footer-image"
-            />
-          </div>
-          <p id="footer-links">
-            <a href="index.html" id="link-1">Ana Sayfa</a>
-            <a href="News.html">Haberler</a>
-            <a href="NewsArchive.html">Arşiv</a>
-            <a href="#about">Hakkımızda</a>
-          </p>
-        </div>
-        <div id="footer-right">
-          <p id="footer-about-title">Hakkımızda</p>
-          <p id="footer-about">
-            Bu internet sitesi Sınav Koleji Çekmeköy Kampüsü Lise Öğrencileri
-            Derin Yankı Ateş ve Yiğit Memiş Tarafından Yapılmıştır.
-          </p>
-        </div>
-      </div>
-    </footer>
-
     <!--!!!!!!!!!!!!!!!!!-->
     <!--FIREBASE DATABASE-->
     <!--!!!!!!!!!!!!!!!!!-->
