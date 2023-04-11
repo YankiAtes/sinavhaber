@@ -40,7 +40,7 @@ async function loginAdmin(){
          let username =  document.getElementById("username").value;
         let password =  document.getElementById("password").value;
         if(username == adminUserName && password == adminPassword){
-        alert("logging in!!")
+        alert("Giriş Yapılıyor")
         window.location.href ="adminpanel.html";
     }
     else{

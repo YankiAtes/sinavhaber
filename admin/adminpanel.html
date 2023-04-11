@@ -20,6 +20,31 @@
         <a href="../index.html" id="cikis">Çıkış</a>
       </div>
     </nav>
-    <main></main>
+    <main>
+      <h1 id="title">Ana Sayfa Haberlerini Düzenleyin</h1>
+
+      <div class="uploadNew">
+        <p class="subtitle">Ana Sayfa Büyük Haber</p>
+        <p class="minitext">HABER FOTOĞRAFI:</p>
+        <input type="file" id="imageInputMainNew" />
+        <button class="newSender" id="sendMainNew">Gönder</button>
+        <!--<button id="reveal">Göster</button>-->
+      </div>
+
+      <div class="uploadNew">
+        <p class="subtitle">Ana Sayfa Yan Haber</p>
+        <p class="minitext">HABER FOTOĞRAFI:</p>
+        <input type="file" id="imageInputSideNew" />
+        <p class="minitext">Haber Yazısı:</p>
+        <input
+          type="text"
+          id="textInputSideNew"
+          placeholder="Haber Yazısı Giriniz"
+        />
+        <button class="newSender" id="sendSideNew">Gönder</button>
+        <!--<button id="reveal">Göster</button>-->
+      </div>
+    </main>
+    <script src="../js/admin-mainpage.js" type="module"></script>
   </body>
 </html>
