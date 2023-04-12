@@ -6,12 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin Panel</title>
     <link rel="stylesheet" href="../css/adminpanel.css" />
-
-    <script
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7466917803259632"
-      crossorigin="anonymous"
-    ></script>
+    <link rel="stylesheet" href="../css/haberler-admin.css" />
   </head>
   <body>
     <nav>
@@ -19,13 +14,34 @@
       <div class="side-bar">
         <img src="../img/logo2.png" id="sidebar-logo" />
         <p id="sidebar-title">Admin</p>
-        <a href="adminpanel.html" style="color: white">Ana Sayfa</a>
-        <a href="haberler.html">Haberler</a>
+        <a href="adminpanel.html">Ana Sayfa</a>
+        <a href="haberler.html" style="color: white">Haberler</a>
         <a href="arsiv.html">Arşiv</a>
         <a href="hakkimizda.html">Hakkımızda</a>
         <a href="../index.html" id="cikis">Çıkış</a>
       </div>
     </nav>
-    <main></main>
+    <main>
+      <h1 id="main-title">Haberler Kısmını Düzenleyin</h1>
+      <div id="add-new-container">
+        <p class="subtitle">Haber Ekleyin</p>
+        <p class="minitext">Küçük Fotoğraf Yükleyin:</p>
+        <input type="file" id="photoUploader1" />
+        <p class="minitext" style="display: block">Başlık:</p>
+        <input type="text" id="newsTitleUploader1" />
+        <p class="minitext" style="display: block">Açıklama:</p>
+        <input
+          type="text"
+          id="newsTextUploader1"
+          style="display: inline-block"
+        />
+        <button id="upload1" style="display: block">Yükleyin</button>
+      </div>
+      <div id="preview">
+        <h1 style="text-align: center; color: red; margin: 0">ÖNİZLEME</h1>
+        <iframe src="../News.html" frameborder="0" id="preview-iframe"></iframe>
+      </div>
+    </main>
+    <script src="../js/admin-newspage.js" type="module"></script>
   </body>
 </html>
