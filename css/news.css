@@ -121,6 +121,9 @@ img {
   .news-image:hover {
     transform: scale(1);
   }
+  .news-div-main p {
+    text-align: center;
+  }
   .news-section-banner {
     visibility: collapse;
     width: 0%;
