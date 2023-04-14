@@ -37,25 +37,29 @@ let docsSnap = await getDocs(colRef);
 docsSnap.forEach((doc) => {
   console.log(doc.data());
   //create news
-  /*createNewElement(
+  createNewElement(
     doc.data().url,
     doc.data().title,
     doc.data().text,
-    doc.data().date
-  );*/
+    doc.data().date,
+    doc.id
+  );
 });
 
-function createNewElement(imageUrl, newTitleDB, newTextDB, newDateDB) {
+function createNewElement(imageUrl, newTitleDB, newTextDB, newDateDB, newID) {
   // Get the container div
   const container = document.getElementById("container");
 
   // Create a new div for the news item
   const newsDiv = document.createElement("div");
-  newsDiv.className = "news-div-main left";
+  newsDiv.className = "news-div-main";
 
   // Create the link element for the news item
   const newsLink = document.createElement("a");
-  newsLink.href = "Haberler/1/bilimdenhaberler1.html";
+  newsLink.className = "newsLink";
+  newsLink.href = "../Haberler/haber.html";
+  //db
+  newsLink.id = newID;
 
   // Create the news image element
   const newsImage = document.createElement("div");
@@ -92,3 +96,15 @@ function createNewElement(imageUrl, newTitleDB, newTextDB, newDateDB) {
 
   container.appendChild(newsDiv);
 }
+
+// Get all elements with the class "newsLink"
+const newsLinks = document.querySelectorAll(".newsLink");
+
+// Add an event listener to each element
+newsLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    // Retrieve the clicked element's id and store it in a variable
+    const id = link.id;
+    alert(`Clicked element's id is ${id}`);
+  });
+});
