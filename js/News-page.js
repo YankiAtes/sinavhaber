@@ -100,11 +100,13 @@ function createNewElement(imageUrl, newTitleDB, newTextDB, newDateDB, newID) {
 // Get all elements with the class "newsLink"
 const newsLinks = document.querySelectorAll(".newsLink");
 
-// Add an event listener to each element
+let clickedNewsID;
+
 newsLinks.forEach((link) => {
   link.addEventListener("click", () => {
     // Retrieve the clicked element's id and store it in a variable
-    const id = link.id;
-    alert(`Clicked element's id is ${id}`);
+    clickedNewsID = link.id;
+    alert(`Clicked element's id is: ${clickedNewsID}`);
+    window.id = clickedNewsID;
   });
 });

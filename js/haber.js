@@ -33,3 +33,7 @@ const app = initializeApp(firebaseConfig);
 //DATABASE
 
 let newTitle = document.getElementById("newTitle");
+
+//NEW
+
+alert(window.id);
