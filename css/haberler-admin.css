@@ -6,7 +6,7 @@
 }
 #add-new-container {
   width: 500px;
-  height: 300px;
+  height: max-content;
   background-color: red;
   margin-top: 10%;
   margin-left: 5%;
@@ -22,4 +22,15 @@
   width: 100%;
   height: 1000px;
   border-radius: 10px;
+}
+* {
+  display: block !important;
+}
+
+#haberiDuzenleyinDiv {
+  background-color: azure;
+  color: red;
+  width: 100%;
+  height: max-content;
+  min-height: 500px;
 }

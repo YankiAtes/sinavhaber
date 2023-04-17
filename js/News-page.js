@@ -107,6 +107,6 @@ newsLinks.forEach((link) => {
     // Retrieve the clicked element's id and store it in a variable
     clickedNewsID = link.id;
     alert(`Clicked element's id is: ${clickedNewsID}`);
-    window.id = clickedNewsID;
+    localStorage.setItem("clickedNewsID", clickedNewsID);
   });
 });

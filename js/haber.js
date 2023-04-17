@@ -35,5 +35,4 @@ const app = initializeApp(firebaseConfig);
 let newTitle = document.getElementById("newTitle");
 
 //NEW
-
-alert(window.id);
+alert(localStorage.getItem("clickedNewsID"));
