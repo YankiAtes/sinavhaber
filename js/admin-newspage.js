@@ -126,10 +126,9 @@ imageInput.addEventListener("change", async (e) => {
 
       let haberFotoArray = [];
       for (let y = 1; y < haberFotografiNo; y++) {
+        //TODO
         let haberFotoInputArray = document.getElementById("haberFotografi" + y);
-        haberFotoArray.push(
-          /*"HaberFotoInput" + y + */ haberFotoInputArray.value
-        );
+        haberFotoArray.push(haberFotoInputArray.value);
       }
 
       //add doc

@@ -29,10 +29,36 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
-//DATABASE
-
-let newTitle = document.getElementById("newTitle");
+const db = getFirestore();
 
 //NEW
-alert(localStorage.getItem("clickedNewsID"));
+let haberId = localStorage.getItem("clickedNewsID");
+
+//REFERENCE
+let newsTitleText = document.getElementById("newTitle");
+let backgroundContainer = document.getElementById("background-container");
+//DATABASE
+async function SetTitle() {
+  let ref = doc(db, "news-page", localStorage.getItem("clickedNewsID"));
+  const docSnap = await getDoc(ref);
+  if (docSnap.exists()) {
+    newsTitleText.innerHTML = docSnap.data().title;
+  }
+}
+async function setSubTitle() {
+  let ref = doc(db, "news-page", localStorage.getItem("clickedNewsID"));
+  const docSnap = await getDoc(ref);
+  if (docSnap.exists()) {
+    console.log(docSnap.data().haberAltBaslikArray);
+
+    for (let i = 0; i < docSnap.data().haberAltBaslikArray.length; i++) {
+      const subTitle = document.createElement("p");
+      subTitle.className = "new-subtitle";
+      subTitle.innerHTML = docSnap.data().haberAltBaslikArray[i];
+      backgroundContainer.appendChild(subTitle);
+    }
+  }
+}
+
+SetTitle();
+setSubTitle();
