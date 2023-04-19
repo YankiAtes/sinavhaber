@@ -11,6 +11,12 @@ import {
   deleteDoc,
   deleteField,
 } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore.js";
+import {
+  getStorage,
+  ref,
+  uploadBytes,
+  getDownloadURL,
+} from "https://www.gstatic.com/firebasejs/9.19.1/firebase-storage.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -29,14 +35,20 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore();
+const storage = getStorage();
 
 //Ana Sayfa Ana Haberi Göster----------------------------------------------------------------------------
-const mainNewIMG = document.getElementById("index-page-main-new-image");
+
 async function showMainNewImage() {
-  const mainNewimageRef = doc(db, "main-page", "main-new");
+  /*const mainNewimageRef = doc(db, "main-page", "main-new");
   const mainNewimageSnapshot = await getDoc(mainNewimageRef);
   const mainNewimageUrl = mainNewimageSnapshot.data().url;
-  mainNewIMG.src = mainNewimageUrl;
+  mainNewIMG.src = mainNewimageUrl;*/
+  const mainNewImage = document.getElementById("index-page-main-new-image");
+  const storageRef = ref(storage, "mainNewImage");
+  getDownloadURL(storageRef).then((url) => {
+    mainNewImage.src = url;
+  });
 }
 showMainNewImage();
 
@@ -46,9 +58,13 @@ let sideNewTextElement = document.getElementById("side-new-2-text-id");
 async function showSideNewImage() {
   const sideNewRef = doc(db, "main-page", "side-new");
   const sideNewImageSnapshot = await getDoc(sideNewRef);
-  const sideNewImageUrl = sideNewImageSnapshot.data().url;
   const sideNewText = sideNewImageSnapshot.data().text;
-  sideNewIMG.src = sideNewImageUrl;
+
+  const storageRef = ref(storage, "sideNewImage");
+  getDownloadURL(storageRef).then((url) => {
+    sideNewIMG.src = url;
+  });
+
   sideNewTextElement.innerText = sideNewText;
 }
 showSideNewImage();

@@ -1,4 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
+
 import {
   getFirestore,
   doc,
@@ -28,6 +29,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore();
+
 //Haberler Kısmında Görülecek Yerlerin Yüklenmesi
 const imageInput = document.getElementById("photoUploader1");
 const newsTitle = document.getElementById("newsTitleUploader1");
@@ -123,14 +125,38 @@ imageInput.addEventListener("change", async (e) => {
           /*"HaberTextInput" + x + */ haberTextInputArray.value
         );
       }
-
       let haberFotoArray = [];
       for (let y = 1; y < haberFotografiNo; y++) {
-        //TODO
-        let haberFotoInputArray = document.getElementById("haberFotografi" + y);
-        haberFotoArray.push(haberFotoInputArray.value);
-      }
+        let newHaberFotoInput = document.getElementById("haberFotografi" + y);
+        let file = newHaberFotoInput.files[0];
+        let reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => {
+          let haberDetayFotoURL = reader.target.files[0];
+          new Compressor(haberDetayFotoURL, {
+            quality: 0.6,
+            success(result) {
+              let haberDetayFotoCompressed = result.toDataURL(
+                "image/jpeg",
+                0.6
+              );
+              console.log(haberDetayFotoCompressed);
+            },
+          });
+        };
 
+        //TODO
+        /*let haberFotoInputArray = document.getElementById("haberFotografi" + y);
+        haberFotoInputArray.onchange = () => {
+          let file = haberFotoInputArray.files[0];
+          let reader = new FileReader();
+          reader.readAsDataURL(file);
+          reader.onload = () => {
+            let haberDetayFotoURL = reader.result.split(",")[i];
+            console.log(haberDetayFotoURL);
+          };
+        };*/
+      }
       //add doc
       let ref = collection(db, "news-page");
 
