@@ -1,5 +1,7 @@
 body {
-  background-color: rgb(54, 58, 58);
+  background-color: rgb(10, 10, 10);
+  margin: 0;
+  padding: 0;
 }
 .side-bar {
   height: 100%;
@@ -8,7 +10,7 @@ body {
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #111;
+  background-color: #999999;
   overflow-x: hidden;
   padding-top: 20px;
 }
@@ -32,7 +34,7 @@ body {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
   font-size: 25px;
-  color: #818181;
+  color: #2d2d2d;
   display: block;
   font-family: arial;
 }
@@ -60,53 +62,87 @@ main {
   color: red;
   font-family: arial;
   font-weight: bolder;
+  color: rgb(255, 0, 195);
 }
+#container1 {
+  margin: auto;
+  display: block;
+  width: 650px;
 
+  padding-bottom: 40px;
+}
 .uploadNew {
-  background-color: rgb(186, 240, 255);
-  margin-top: 7%;
+  background-color: rgb(0, 0, 0);
+  border-color: rgb(255, 0, 195);
+  border-width: 3px;
+  border-style: solid;
   width: 500px;
-  height: 200px;
-  margin-left: 5%;
+  height: 300px;
   border-radius: 5px;
+  display: block;
+  margin: auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+#uplaodNew1 {
+  height: 250px;
+}
+.uploadNewInput {
+  color: white;
+  font-weight: bold;
 }
 .subtitle {
   font-family: arial;
   font-weight: bolder;
   font-size: 20px;
   text-align: center;
-  padding-top: 1.5vh;
+  padding-top: 15px;
+  color: rgb(255, 0, 195);
 }
 .minitext {
   display: inline-block;
-  margin-left: 1vh;
+  margin-left: 10px;
   font-family: arial;
   font-weight: bold;
-}
-#imageInput {
-  display: inline-block;
-  margin-left: 1vh;
-  font-family: arial;
-  font-weight: bold;
+  color: rgb(255, 0, 195);
+  font-size: 18px;
+  margin-bottom: 0;
 }
 
 .newSender {
   display: block;
-  margin-left: 1vh;
-  background-color: black;
-  color: white;
+  margin-left: 10px;
+  color: black;
+  background-color: rgb(212, 0, 255);
   border-style: solid;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 8px;
-  padding-right: 8px;
-  border-radius: 2px;
+  padding: 10px 22px 10px 22px;
+  border-radius: 30px;
   cursor: pointer;
   transition: opacity 0.1s;
+  margin-top: 50px;
 }
 .newSender:hover {
   opacity: 0.8;
 }
 .newSender:active {
   opacity: 0.6;
+}
+
+#textInputSideNew {
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  border: none;
+  width: 300px;
+  font-size: 15px;
+  margin: 0;
+}
+#textInputSideNew:focus {
+  outline: none;
+}
+#sideNewHR {
+  width: 300px;
+  margin: 0;
+  padding: 0;
+  margin-left: 115px;
 }

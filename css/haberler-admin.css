@@ -1,15 +1,20 @@
 #main-title {
   text-align: center;
   font-weight: bolder;
-  color: red;
+  color: rgb(255, 0, 195);
   font-family: arial;
 }
 #add-new-container {
   width: 500px;
   height: max-content;
-  background-color: red;
+  /*background-color: red;*/
   margin-top: 10%;
   margin-left: 5%;
+  border-color: rgb(255, 0, 195);
+  border-width: 3px;
+  border-style: solid;
+  background-color: black;
+  margin: auto;
 }
 #preview {
   width: 90%;
@@ -23,14 +28,152 @@
   height: 1000px;
   border-radius: 10px;
 }
-* {
-  display: block !important;
-}
 
 #haberiDuzenleyinDiv {
-  background-color: azure;
+  /*background-color: azure;*/
   color: red;
   width: 100%;
   height: max-content;
   min-height: 500px;
+}
+#createNew {
+  margin-left: 20px;
+  margin-top: 20px;
+  color: black;
+  background-color: rgb(255, 0, 195);
+  border-style: solid;
+  border-radius: 20px;
+  padding: 8px 10px 8px 10px;
+  display: block;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+#createNew:hover {
+  background-color: rgb(193, 0, 148);
+}
+#createNew:active {
+  background-color: rgb(138, 0, 106);
+}
+
+#btnUploadPhoto {
+  margin-left: 20px;
+  margin-top: 20px;
+  color: black;
+  background-color: rgb(255, 0, 195);
+  border-style: solid;
+  border-radius: 20px;
+  padding: 8px 10px 8px 10px;
+  display: block;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+#btnUploadPhoto:hover {
+  background-color: rgb(193, 0, 148);
+}
+#btnUploadPhoto:active {
+  background-color: rgb(138, 0, 106);
+}
+
+#wrapper1 {
+  width: 100%;
+}
+#wrapper2 {
+  width: 100%;
+}
+
+#newsTitleUploader1 {
+  width: 300px;
+  margin-bottom: 0;
+  background-color: black;
+  color: white;
+  border-style: solid;
+  border: none;
+  font-weight: bold;
+  font-size: 15px;
+}
+#newsTitleUploader1:focus {
+  outline: none;
+}
+#newsTextUploader1 {
+  margin-left: 20px;
+  background-color: black;
+  color: white;
+  border-style: solid;
+  border-color: rgb(255, 0, 195);
+  font-weight: bold;
+  border-top-width: 1px;
+}
+#newsTextUploader1:focus {
+  outline: none;
+  border-width: 3px;
+}
+.InputHR1 {
+  height: 1px;
+  background-color: white;
+  width: 306px;
+  margin: 0;
+  margin-left: 84px;
+}
+.pinkHR {
+  width: 100%;
+  border-color: rgb(255, 0, 195);
+  border-style: solid;
+  border-width: 1px;
+}
+
+#buttonWrapper {
+  width: fit-content;
+  display: block;
+  margin: auto;
+}
+#buttonWrapper button {
+  display: block;
+  margin: auto;
+  width: 150px;
+  height: 30px;
+  margin-top: 10px;
+  background-color: rgb(212, 0, 255);
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+#buttonWrapper button:hover {
+  background-color: rgb(178, 0, 213);
+}
+
+.minitext2 {
+  display: block;
+  margin-left: 10px;
+  font-family: arial;
+  font-weight: bold;
+  color: rgb(255, 0, 195);
+  font-size: 18px;
+  margin-bottom: 0;
+}
+
+.haberDetayInputJS {
+  display: block;
+}
+
+#upload1 {
+  display: block;
+  width: 80px;
+  height: 30px;
+  color: white;
+  background-color: rgb(212, 0, 255);
+  border-style: solid;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  margin: auto;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+#upload1:hover {
+  background-color: rgb(148, 0, 177);
+}
+#upload1:active {
+  background-color: rgb(124, 0, 148);
 }

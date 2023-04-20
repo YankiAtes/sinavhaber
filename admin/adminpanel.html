@@ -21,29 +21,31 @@
       </div>
     </nav>
     <main>
-      <h1 id="title">Ana Sayfa Haberlerini Düzenleyin</h1>
+      <div id="container1">
+        <h1 id="title">Ana Sayfa Haberlerini Düzenleyin</h1>
+        <div class="uploadNew" id="uplaodNew1">
+          <p class="subtitle">Ana Sayfa Büyük Haber</p>
+          <p class="minitext">HABER FOTOĞRAFI:</p>
+          <input type="file" id="imageInputMainNew" class="uploadNewInput" />
+          <button class="newSender" id="sendMainNew">Yükle</button>
+          <!--<button id="reveal">Göster</button>-->
+        </div>
 
-      <div class="uploadNew">
-        <p class="subtitle">Ana Sayfa Büyük Haber</p>
-        <p class="minitext">HABER FOTOĞRAFI:</p>
-        <input type="file" id="imageInputMainNew" />
-        <button class="newSender" id="sendMainNew">Gönder</button>
-        <!--<button id="reveal">Göster</button>-->
-      </div>
+        <div class="uploadNew">
+          <p class="subtitle">Ana Sayfa Yan Haber</p>
+          <p class="minitext">HABER FOTOĞRAFI:</p>
+          <input type="file" id="imageInputSideNew" class="uploadNewInput" />
+          <p class="minitext" style="margin-bottom: 0">Haber Yazısı:</p>
+          <input
+            type="text"
+            id="textInputSideNew"
+            placeholder="Haber Yazısı Giriniz"
+          />
+          <hr id="sideNewHR" />
 
-      <div class="uploadNew">
-        <p class="subtitle">Ana Sayfa Yan Haber</p>
-        <p class="minitext">HABER FOTOĞRAFI:</p>
-        <input type="file" id="imageInputSideNew" />
-        <p class="minitext">Haber Yazısı:</p>
-        <input
-          type="text"
-          id="textInputSideNew"
-          placeholder="Haber Yazısı Giriniz"
-        />
-
-        <button class="newSender" id="sendSideNew">Gönder</button>
-        <!--<button id="reveal">Göster</button>-->
+          <button class="newSender" id="sendSideNew">Yükle</button>
+          <!--<button id="reveal">Göster</button>-->
+        </div>
       </div>
     </main>
     <script src="../js/admin-mainpage.js" type="module"></script>

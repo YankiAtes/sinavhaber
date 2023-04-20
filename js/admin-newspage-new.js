@@ -77,7 +77,7 @@ inputMainPhoto.addEventListener("change", (event) => {
   });
 });
 
-//--------------------------------------HABER EKLEME SİSTEMİ-----------------------------------------------------------
+//--------------------------------------HABER DÜZENLEME SİSTEMİ-----------------------------------------------------------
 
 const haberiDuzenleyinDiv = document.getElementById("haberiDuzenleyinDiv");
 const altBaslikEkle = document.getElementById("altBaslikEkle");
@@ -89,21 +89,23 @@ let haberFotografiNo = 1;
 
 function haberAltBaslikOlustur() {
   const altBaslikText = document.createElement("p");
-  altBaslikText.className = "minitext";
-  altBaslikText.innerText = "Alt Başlık:" + altBaslikNo;
+  altBaslikText.className = "minitext2";
+  altBaslikText.innerText = "Alt Başlık " + altBaslikNo + ":";
 
   haberiDuzenleyinDiv.appendChild(altBaslikText);
 
   const altBaslikInput = document.createElement("input");
   altBaslikInput.type = "text";
   altBaslikInput.setAttribute("id", "haberAltBaslik" + altBaslikNo);
+  altBaslikInput.className = "haberDetayInputJS";
   altBaslikNo = altBaslikNo + 1;
 
   haberiDuzenleyinDiv.appendChild(altBaslikInput);
 }
 function haberTextOlustur() {
   const haberTextOlusturText = document.createElement("p");
-  haberTextOlusturText.className = "minitext";
+  haberTextOlusturText.className = "minitext2";
+
   haberTextOlusturText.innerText = "Haber Yazısı " + haberTextNo;
 
   haberiDuzenleyinDiv.appendChild(haberTextOlusturText);
@@ -111,13 +113,14 @@ function haberTextOlustur() {
   const haberTextInput = document.createElement("input");
   haberTextInput.type = "text";
   haberTextInput.id = "haberText" + haberTextNo;
+  haberTextInput.id = "haberDetayInputJS";
   haberTextNo = haberTextNo + 1;
 
   haberiDuzenleyinDiv.appendChild(haberTextInput);
 }
 function haberFotografOlustur() {
   const haberFotografOlusturText = document.createElement("p");
-  haberFotografOlusturText.className = "minitext";
+  haberFotografOlusturText.className = "minitext2";
   haberFotografOlusturText.innerText =
     "Haber Fotoğrafı " + haberFotografiNo + ":";
   haberiDuzenleyinDiv.appendChild(haberFotografOlusturText);

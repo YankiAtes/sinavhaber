@@ -26,32 +26,51 @@
 
       <div id="add-new-container">
         <p class="subtitle">Haber Ekleyin</p>
-        <p class="minitext" style="display: block">Başlık:</p>
-        <input type="text" id="newsTitleUploader1" />
-        <p class="minitext" style="display: block">Açıklama:</p>
 
-        <input
-          type="text"
-          id="newsTextUploader1"
-          style="display: inline-block"
-        />
+        <div id="wrapper1">
+          <p class="minitext" style="margin: 0; margin-left: 20px">Başlık:</p>
+          <input
+            type="text"
+            id="newsTitleUploader1"
+            placeholder="Haber Başlığı Giriniz"
+          />
+          <hr class="InputHR1" />
+        </div>
+        <div id="wrapper2">
+          <p class="minitext" style="display: block; margin-left: 20px">
+            Açıklama:
+          </p>
+          <textarea id="newsTextUploader1" cols="30" rows="10"></textarea>
+          <!--<input type="text" id="newsTextUploader1" />-->
+        </div>
 
         <button id="createNew">Haber Oluştur</button>
+
+        <hr class="pinkHR" />
+
         <p class="minitext">Küçük Fotoğraf Yükleyin:</p>
-        <input type="file" id="photoUploader1" />
+        <input type="file" id="photoUploader1" style="color: white" />
         <button id="btnUploadPhoto">Fotoğraf Yükle</button>
+
+        <hr class="pinkHR" style="margin-top: 25px" />
 
         <p class="subtitle">Haberi Düzenleyin</p>
         <div id="haberiDuzenleyinDiv">
-          <button id="altBaslikEkle">Alt Başlık Ekleyin</button>
-          <button id="yaziEkle">Haber Yazısı Ekleyin</button>
-          <button id="fotografEkle">Fotoğraf Ekleyin</button>
+          <div id="buttonWrapper">
+            <button id="altBaslikEkle">Alt Başlık Ekleyin</button>
+            <button id="yaziEkle">Haber Yazısı Ekleyin</button>
+            <button id="fotografEkle" style="margin-bottom: 30px">
+              Fotoğraf Ekleyin
+            </button>
+          </div>
         </div>
         <!--GÖNDER BUTONU-->
-        <button id="upload1" style="display: block">Yükleyin</button>
+        <button id="upload1" onclick="location.reload()">Yükleyin</button>
       </div>
       <div id="preview">
-        <h1 style="text-align: center; color: red; margin: 0">ÖNİZLEME</h1>
+        <h1 style="text-align: center; color: rgb(212, 0, 255); margin: 0">
+          ÖNİZLEME
+        </h1>
         <iframe src="../News.html" frameborder="0" id="preview-iframe"></iframe>
       </div>
     </main>
