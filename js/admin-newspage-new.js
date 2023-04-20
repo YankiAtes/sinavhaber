@@ -18,10 +18,7 @@ import {
   deleteDoc,
   deleteField,
 } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore.js";
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyDo9lGR-HEf5z0SHKLfV1XFxZY6NzD_npE",
   authDomain: "sinavhaber-6f8882.firebaseapp.com",
@@ -33,23 +30,55 @@ const firebaseConfig = {
   storageBucket: "gs://sinavhaber-6f8882.appspot.com",
 };
 
+let createdDocumentsID = undefined;
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore();
 const storage = getStorage();
 
-//Haberler Kısmında Görülecek Yerlerin Yüklenmesi
-const imageInput = document.getElementById("photoUploader1");
-const newsTitle = document.getElementById("newsTitleUploader1");
-const newsText = document.getElementById("newsTextUploader1");
+//Element Reference
+let inputNewTitle = document.getElementById("newsTitleUploader1");
+let inputNewText = document.getElementById("newsTextUploader1");
+let btnCreateNew = document.getElementById("createNew");
 
-//-------------------------------------------------------------//
+//HABER BAŞLIK VE AÇIKLAMA OLUŞTURULDU
+btnCreateNew.addEventListener("click", async () => {
+  let ref = collection(db, "news-page");
 
-const sendButton = document.getElementById("upload1");
+  try {
+    const docRef = await addDoc(ref, {
+      title: inputNewTitle.value,
+      text: inputNewText.value,
+    });
 
-//-------------------------------------------------------------//
+    console.log("Document id: ", docRef.id);
+    createdDocumentsID = docRef.id;
+    alert("Haber Başarılı Bir Şekilde Oluşturuldu...");
+  } catch (error) {
+    console.log("Hata! :" + error);
+  }
+});
 
-//HABER EKLEME SİSTEMİ
+//-------------------------------------------------------------------------------------------------
+
+//Thumbnail'i cloud storage'a yükleme
+let inputMainPhoto = document.getElementById("photoUploader1");
+let btnUploadPhoto = document.getElementById("btnUploadPhoto");
+inputMainPhoto.addEventListener("change", (event) => {
+  btnUploadPhoto.addEventListener("click", async () => {
+    let file = event.target.files[0];
+    const storageRef = ref(
+      storage,
+      "NewsImages/" + (createdDocumentsID + "/") + "Thumbnail"
+    );
+    uploadBytes(storageRef, file).then(() => {
+      alert("Kapak Fotoğrafı Başarılı Bir Şekilde Yüklendi...");
+    });
+  });
+});
+
+//--------------------------------------HABER EKLEME SİSTEMİ-----------------------------------------------------------
+
 const haberiDuzenleyinDiv = document.getElementById("haberiDuzenleyinDiv");
 const altBaslikEkle = document.getElementById("altBaslikEkle");
 const yaziEkle = document.getElementById("yaziEkle");
@@ -71,10 +100,6 @@ function haberAltBaslikOlustur() {
   altBaslikNo = altBaslikNo + 1;
 
   haberiDuzenleyinDiv.appendChild(altBaslikInput);
-
-  for (let i = 1; i < altBaslikNo; i++) {
-    console.log(i);
-  }
 }
 function haberTextOlustur() {
   const haberTextOlusturText = document.createElement("p");
@@ -93,7 +118,8 @@ function haberTextOlustur() {
 function haberFotografOlustur() {
   const haberFotografOlusturText = document.createElement("p");
   haberFotografOlusturText.className = "minitext";
-  haberFotografOlusturText.innerText = "Haber Fotoğrafı: ";
+  haberFotografOlusturText.innerText =
+    "Haber Fotoğrafı " + haberFotografiNo + ":";
   haberiDuzenleyinDiv.appendChild(haberFotografOlusturText);
 
   const haberFotografInput = document.createElement("input");
@@ -107,63 +133,26 @@ altBaslikEkle.addEventListener("click", haberAltBaslikOlustur);
 yaziEkle.addEventListener("click", haberTextOlustur);
 fotografEkle.addEventListener("click", haberFotografOlustur);
 
-//-----------------------------------------------------------//
+const uploadButton = document.getElementById("upload1");
 
-imageInput.addEventListener("change", async (e) => {
-  sendButton.addEventListener("click", async () => {
-    const file = e.target.files[0];
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = async (event) => {
-      const base64String = event.target.result;
-
-      //haber detayı
-      let haberAltBaslikArray = [];
-      for (let i = 1; i < altBaslikNo; i++) {
-        let altBaslikInputArray = document.getElementById("haberAltBaslik" + i);
-        haberAltBaslikArray.push(altBaslikInputArray.value);
-      }
-
-      let habertextArray = [];
-      for (let x = 1; x < haberTextNo; x++) {
-        let haberTextInputArray = document.getElementById("haberText" + x);
-        habertextArray.push(haberTextInputArray.value);
-      }
-      let haberFotoArray = [];
-      for (let y = 1; y < haberFotografiNo; y++) {
-        let newHaberFotoInput = document.getElementById("haberFotografi" + y);
-        let file = newHaberFotoInput.files[0];
-        let reader = new FileReader();
-        reader.readAsDataURL(file);
-        reader.onload = () => {
-          let haberDetayFotoURL = reader.target.files[0];
-          new Compressor(haberDetayFotoURL, {
-            quality: 0.6,
-            success(result) {
-              let haberDetayFotoCompressed = result.toDataURL(
-                "image/jpeg",
-                0.6
-              );
-              console.log(haberDetayFotoCompressed);
-            },
-          });
-        };
-      }
-      //add doc
-      let ref = collection(db, "news-page");
-
-      const docRef = await addDoc(ref, {
-        url: base64String,
-        title: newsTitle.value,
-        text: newsText.value,
-        haberAltBaslikArray: haberAltBaslikArray,
-        habertextArray: habertextArray,
-        haberFotoArray: haberFotoArray,
-      })
-        .then(() => alert("İşlem Başarılı"))
-        .catch((error) => {
-          alert("İşlem Başarısız: ", error);
-        });
-    };
-  });
+uploadButton.addEventListener("click", () => {
+  let haberAltBaslikArray = [];
+  for (let i = 1; i < altBaslikNo; i++) {
+    let altBaslikInputArray = document.getElementById("haberAltBaslik" + i);
+    haberAltBaslikArray.push(altBaslikInputArray.value);
+  }
+  let haberTextArray = [];
+  for (let i = 1; i < haberTextNo; i++) {
+    let textInputArray = document.getElementById("haberText" + i);
+    haberTextArray.push(textInputArray.value);
+    //console.log(haberAltBaslikArray[i - 1]);
+  }
+  async function updateDocFields() {
+    let ref = doc(db, "news-page", createdDocumentsID);
+    await updateDoc(ref, {
+      haberAltBaslikArray: haberAltBaslikArray,
+      haberTextArray: haberTextArray,
+    });
+  }
+  updateDocFields();
 });

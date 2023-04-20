@@ -31,6 +31,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore();
 
+alert(localStorage.getItem("clickedNewsID"));
+
 //NEW
 let haberId = localStorage.getItem("clickedNewsID");
 
@@ -45,7 +47,7 @@ async function SetTitle() {
     newsTitleText.innerHTML = docSnap.data().title;
   }
 }
-async function setSubTitle() {
+/*async function setSubTitle() {
   let ref = doc(db, "news-page", localStorage.getItem("clickedNewsID"));
   const docSnap = await getDoc(ref);
   if (docSnap.exists()) {
@@ -59,6 +61,51 @@ async function setSubTitle() {
     }
   }
 }
+async function setText() {
+  let ref = doc(db, "news-page", localStorage.getItem("clickedNewsID"));
+  const docSnap = await getDoc(ref);
+  if (docSnap.exists()) {
+    console.log(docSnap.data().haberTextArray);
+
+    for (let i = 0; i < docSnap.data().haberTextArray.length; i++) {
+      const text = document.createElement("p");
+      text.className = "new-text";
+      text.innerHTML = docSnap.data().haberTextArray[i];
+      backgroundContainer.appendChild(text);
+    }
+  }
+}*/
+async function setSubTitleAndText() {
+  let ref = doc(db, "news-page", localStorage.getItem("clickedNewsID"));
+  const docSnap = await getDoc(ref);
+  if (docSnap.exists()) {
+    console.log(docSnap.data().haberAltBaslikArray);
+    console.log(docSnap.data().haberTextArray);
+
+    let maxLen = Math.max(
+      docSnap.data().haberAltBaslikArray.length,
+      docSnap.data().haberTextArray.length
+    );
+
+    for (let i = 0; i < maxLen; i++) {
+      if (docSnap.data().haberAltBaslikArray[i]) {
+        const subTitle = document.createElement("p");
+        subTitle.className = "new-subtitle";
+        subTitle.innerHTML = docSnap.data().haberAltBaslikArray[i];
+        backgroundContainer.appendChild(subTitle);
+      }
+
+      if (docSnap.data().haberTextArray[i]) {
+        const text = document.createElement("p");
+        text.className = "new-text";
+        text.innerHTML = docSnap.data().haberTextArray[i];
+        backgroundContainer.appendChild(text);
+      }
+    }
+  }
+}
 
 SetTitle();
-setSubTitle();
+/*setSubTitle();
+setText();*/
+setSubTitleAndText();

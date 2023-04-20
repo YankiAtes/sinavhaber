@@ -12,11 +12,17 @@ import {
   deleteDoc,
   deleteField,
 } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore.js";
+import {
+  getStorage,
+  ref,
+  uploadBytes,
+  getDownloadURL,
+} from "https://www.gstatic.com/firebasejs/9.19.1/firebase-storage.js";
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyDo9lGR-HEf5z0SHKLfV1XFxZY6NzD_npE",
   authDomain: "sinavhaber-6f8882.firebaseapp.com",
@@ -25,11 +31,12 @@ const firebaseConfig = {
   messagingSenderId: "202358867428",
   appId: "1:202358867428:web:619275d5230f9f08ef73f1",
   measurementId: "G-R8PBQ3RB0H",
+  storageBucket: "gs://sinavhaber-6f8882.appspot.com",
 };
-
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore();
+const storage = getStorage();
 
 //create news
 let colRef = collection(db, "news-page");
@@ -37,13 +44,17 @@ let docsSnap = await getDocs(colRef);
 docsSnap.forEach((doc) => {
   console.log(doc.data());
   //create news
-  createNewElement(
-    doc.data().url,
-    doc.data().title,
-    doc.data().text,
-    doc.data().date,
-    doc.id
-  );
+  let storageRef = ref(storage, "NewsImages/" + (doc.id + "/") + "Thumbnail");
+
+  getDownloadURL(storageRef).then((url) => {
+    createNewElement(
+      url,
+      doc.data().title,
+      doc.data().text,
+      doc.data().date,
+      doc.id
+    );
+  });
 });
 
 function createNewElement(imageUrl, newTitleDB, newTextDB, newDateDB, newID) {
@@ -95,18 +106,11 @@ function createNewElement(imageUrl, newTitleDB, newTextDB, newDateDB, newID) {
   newsDiv.appendChild(newsDate);
 
   container.appendChild(newsDiv);
-}
 
-// Get all elements with the class "newsLink"
-const newsLinks = document.querySelectorAll(".newsLink");
-
-let clickedNewsID;
-
-newsLinks.forEach((link) => {
+  let link = newsLink;
   link.addEventListener("click", () => {
-    // Retrieve the clicked element's id and store it in a variable
-    clickedNewsID = link.id;
-    alert(`Clicked element's id is: ${clickedNewsID}`);
-    localStorage.setItem("clickedNewsID", clickedNewsID);
+    console.log("event listener added.");
+    alert(link.id);
+    localStorage.setItem("clickedNewsID", link.id);
   });
-});
+}
