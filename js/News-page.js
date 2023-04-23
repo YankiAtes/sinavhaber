@@ -45,7 +45,6 @@ docsSnap.forEach((doc) => {
   console.log(doc.data());
   //create news
   let storageRef = ref(storage, "NewsImages/" + (doc.id + "/") + "Thumbnail");
-
   getDownloadURL(storageRef).then((url) => {
     createNewElement(
       url,

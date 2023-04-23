@@ -113,7 +113,7 @@ function haberTextOlustur() {
   const haberTextInput = document.createElement("input");
   haberTextInput.type = "text";
   haberTextInput.id = "haberText" + haberTextNo;
-  haberTextInput.id = "haberDetayInputJS";
+  haberTextInput.className = "haberDetayInputJS";
   haberTextNo = haberTextNo + 1;
 
   haberiDuzenleyinDiv.appendChild(haberTextInput);
@@ -137,17 +137,19 @@ yaziEkle.addEventListener("click", haberTextOlustur);
 fotografEkle.addEventListener("click", haberFotografOlustur);
 
 const uploadButton = document.getElementById("upload1");
+let haberAltBaslikArray = [];
+let haberTextArray = [];
 
 uploadButton.addEventListener("click", () => {
-  let haberAltBaslikArray = [];
   for (let i = 1; i < altBaslikNo; i++) {
     let altBaslikInputArray = document.getElementById("haberAltBaslik" + i);
     haberAltBaslikArray.push(altBaslikInputArray.value);
+    haberTextArray.push();
   }
-  let haberTextArray = [];
   for (let i = 1; i < haberTextNo; i++) {
     let textInputArray = document.getElementById("haberText" + i);
     haberTextArray.push(textInputArray.value);
+    haberAltBaslikArray.push();
     //console.log(haberAltBaslikArray[i - 1]);
   }
   async function updateDocFields() {
