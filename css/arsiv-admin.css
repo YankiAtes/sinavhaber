@@ -1,0 +1,39 @@
+*{
+    font-family: arial;
+}
+#arsivTitle{
+    color: rgb(255, 0, 195);
+    font-weight: bolder;
+    font-size: 32px;
+    margin-top: 20px;
+    margin-bottom: 60px;
+    text-align: center;
+    
+}
+#wrapper1{
+    
+    border-style: solid;
+    border-radius: 2px;
+    border-width: 2px;
+    width: 850px;
+    height: 600px;
+    margin: auto;
+    border-color: rgb(255, 0, 195);
+}
+
+#wrapper2{
+    margin-left: 40px;
+}
+#selectArsivHaberler{
+    min-width: 400px;
+    max-width: 700px;
+    height: 200px;
+    display: block;
+    font-size: 18px;
+}
+
+#arsivlenecekHaberText{
+    margin-bottom: 20px;
+}
+
+

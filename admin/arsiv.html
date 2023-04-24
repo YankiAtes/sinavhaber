@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin Panel</title>
     <link rel="stylesheet" href="../css/adminpanel.css" />
+    <link rel="stylesheet" href="../css/arsiv-admin.css" />
     <script
       async
       src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7466917803259632"
@@ -18,13 +19,26 @@
       <div class="side-bar">
         <img src="../img/logo2.png" id="sidebar-logo" />
         <p id="sidebar-title">Admin</p>
-        <a href="adminpanel.html" style="color: white">Ana Sayfa</a>
+        <a href="adminpanel.html">Ana Sayfa</a>
         <a href="haberler.html">Haberler</a>
-        <a href="arsiv.html">Arşiv</a>
+        <a href="arsiv.html" style="color: white">Arşiv</a>
         <a href="hakkimizda.html">Hakkımızda</a>
         <a href="../index.html" id="cikis">Çıkış</a>
       </div>
     </nav>
-    <main></main>
+    <main>
+      <p id="arsivTitle">Arşiv Kısmını Düzenleyin</p>
+      <div id="wrapper1">
+        <p class="subtitle" style="margin-top: 0">Haber Arşivleyin</p>
+        <div id="wrapper2">
+          <p class="minitext" id="arsivlenecekHaberText">
+            Arşivlenecek Haber Seçin:
+          </p>
+          <select id="selectArsivHaberler" multiple></select>
+          <button id="goster">Arşivle</button>
+        </div>
+      </div>
+    </main>
+    <script src="../js/admin-arsiv.js" type="module"></script>
   </body>
 </html>
