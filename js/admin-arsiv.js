@@ -58,6 +58,32 @@ denemebtn.addEventListener("click", () => {
     //seçilen haberler için foreach döngüsü
     selectedOptions.forEach((opt) => {
       //opt = seçilen haberlerin id'si
+      async function deleteNews() {
+        let ref = doc(db, "news-page", opt);
+        let docSnap = await getDoc(ref);
+        if (!docSnap.exists()) {
+          alert("Document does not exist!");
+          return;
+        }
+
+        await deleteDoc(ref).catch((err) => {
+          alert("İşlem Başarısız. Hata Kodu:  " + err);
+        });
+      }
+      async function addNewsToArchive() {
+        let ref1 = collection(db, "archive");
+        let ref2 = doc(db, "news-page", opt);
+
+        let docSnap = await getDoc(ref2);
+        const docRef = await addDoc(ref1, {
+          title: docSnap.data().title,
+          text: docSnap.data().text,
+        }).catch((err) => {
+          alert("İşlem Başarısız Hata Kodu: " + err);
+        });
+      }
+      addNewsToArchive();
+      deleteNews();
       console.log(opt);
     });
     alert("Haberler Arşivlendi...");

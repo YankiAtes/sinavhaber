@@ -96,13 +96,6 @@ div {
   transform: scale(1.05);
 }
 
-#main-new {
-  margin-left: 6%;
-  margin-top: 2%;
-  width: 50%;
-  height: 60vh;
-  margin-bottom: 5%;
-}
 
 #side-new1 {
   margin-left: 5%;
@@ -118,6 +111,7 @@ div {
 #sidenew1-img {
   height: 30vh;
 }
+
 #okulumuz {
   font-family: arial;
   font-weight: bold;
@@ -128,12 +122,21 @@ div {
   margin-bottom: 0;
   cursor: pointer;
 }
+#main-new {
+  margin-left: 6%;
+  margin-top: 2%;
+  width: 50%;
+  height: 60vh;
+  margin-bottom: 5%;
+}
+
 #side-new2 {
   margin-left: 5%;
   margin-top: 1%;
   width: 30%;
   height: 28vh;
   margin-bottom: 5%;
+ 
 }
 .side-new-2-text {
   color: black;
@@ -145,13 +148,15 @@ div {
 }
 
 .index-page-news-image {
+  margin: auto;
+  display: block;
   width: 100%;
   height: 100%;
-  object-fit: fill;
   cursor: pointer;
   border: none;
-  border-radius: 7px;
+  border-radius: 7px; 
 }
+
 
 #footer {
   width: 100%;
@@ -160,6 +165,11 @@ div {
   vertical-align: bottom;
   display: inline-block;
   margin-top: 2%;
+  
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 #footer-left {
   display: block;
