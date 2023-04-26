@@ -58,20 +58,29 @@ denemebtn.addEventListener("click", () => {
     //seçilen haberler için foreach döngüsü
     selectedOptions.forEach((opt) => {
       //opt = seçilen haberlerin id'si
+
       async function deleteNews() {
         let ref = doc(db, "news-page", opt);
+
         let docSnap = await getDoc(ref);
         if (!docSnap.exists()) {
           alert("Document does not exist!");
           return;
         }
+        //foto alma
+        let globalUrl = undefined;
+        const storageRef = ref(stroge, "NewsImages/" + opt + "Thumbnail");
+        getDownloadURL(storageRef).then((url) => {
+          globalUrl = url;
+        });
 
+        //------------------------------------------
         await deleteDoc(ref).catch((err) => {
           alert("İşlem Başarısız. Hata Kodu:  " + err);
         });
       }
       async function addNewsToArchive() {
-        let ref1 = collection(db, "archive");
+        let ref1 = collection(db, "archive", opt);
         let ref2 = doc(db, "news-page", opt);
 
         let docSnap = await getDoc(ref2);

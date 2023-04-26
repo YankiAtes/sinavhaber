@@ -165,11 +165,11 @@ div {
   vertical-align: bottom;
   display: inline-block;
   margin-top: 2%;
-  
+
   position: absolute;
-  bottom: 0;
   left: 0;
   right: 0;
+  bottom: 0;
 }
 #footer-left {
   display: block;

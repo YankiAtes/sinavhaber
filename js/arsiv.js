@@ -35,10 +35,11 @@ const db = getFirestore();
 const storage = getStorage();
 
 //create news
-let colRef = collection(db, "news-page");
+let colRef = collection(db, "archive");
 let docsSnap = await getDocs(colRef);
 docsSnap.forEach((doc) => {
   console.log(doc.data());
+  //alert(doc.id);
   //create news
   let storageRef = ref(storage, "NewsImages/" + (doc.id + "/") + "Thumbnail");
   getDownloadURL(storageRef).then((url) => {
@@ -54,7 +55,7 @@ docsSnap.forEach((doc) => {
 
 function createNewElement(imageUrl, newTitleDB, newTextDB, newDateDB, newID) {
   // Get the container div
-  const container = document.getElementById("container");
+  const container = document.getElementById("news-div");
 
   // Create a new div for the news item
   const newsDiv = document.createElement("div");
@@ -105,7 +106,7 @@ function createNewElement(imageUrl, newTitleDB, newTextDB, newDateDB, newID) {
   let link = newsLink;
   link.addEventListener("click", () => {
     console.log("event listener added.");
-    alert(link.id);
+    //alert(link.id);
     localStorage.setItem("clickedNewsID", link.id);
   });
 }
