@@ -16,6 +16,10 @@ import {
   ref,
   uploadBytes,
   getDownloadURL,
+  deleteObject,
+  listAll,
+  list,
+  updateMetadata,
 } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-storage.js";
 
 const firebaseConfig = {
@@ -34,7 +38,7 @@ const storage = getStorage();
 
 //Identify components
 const selectArsivHaberler = document.getElementById("selectArsivHaberler");
-const denemebtn = document.getElementById("goster");
+const arsivle = document.getElementById("arsivle");
 
 //Database for Select
 const docRef = collection(db, "news-page");
@@ -49,7 +53,7 @@ getDocs(docRef).then((querySnapshot) => {
   });
 });
 
-denemebtn.addEventListener("click", () => {
+arsivle.addEventListener("click", () => {
   const confirmation = confirm("Haberleri Arşivlemek İstiyor Musunuz?");
   if (confirmation) {
     const selectedOptions = Array.from(selectArsivHaberler.selectedOptions).map(
@@ -59,7 +63,7 @@ denemebtn.addEventListener("click", () => {
     selectedOptions.forEach((opt) => {
       //opt = seçilen haberlerin id'si
 
-      async function deleteNews() {
+      /*  async function deleteNews() {
         let ref = doc(db, "news-page", opt);
 
         let docSnap = await getDoc(ref);
@@ -67,32 +71,86 @@ denemebtn.addEventListener("click", () => {
           alert("Document does not exist!");
           return;
         }
-        //foto alma
-        let globalUrl = undefined;
-        const storageRef = ref(stroge, "NewsImages/" + opt + "Thumbnail");
-        getDownloadURL(storageRef).then((url) => {
-          globalUrl = url;
-        });
-
         //------------------------------------------
         await deleteDoc(ref).catch((err) => {
           alert("İşlem Başarısız. Hata Kodu:  " + err);
         });
-      }
+      } */
       async function addNewsToArchive() {
-        let ref1 = collection(db, "archive", opt);
-        let ref2 = doc(db, "news-page", opt);
+        /*   **ESKİ KOD let** refArchive = collection(db, "archive");
+        let refNewsPage = doc(db, "news-page", opt);
 
-        let docSnap = await getDoc(ref2);
-        const docRef = await addDoc(ref1, {
-          title: docSnap.data().title,
-          text: docSnap.data().text,
+        let docSnap = await getDoc(refNewsPage);
+
+        let txtTitle = docSnap.data().title;
+        let txtText = docSnap.data().text;
+
+        await deleteDoc(refNewsPage).catch((err) => {
+          alert("İşlem Başarısız. Hata Kodu:  " + err);
+        });
+
+        const docRef = await addDoc(refArchive, {
+          title: txtTitle,
+          text: txtText,
         }).catch((err) => {
           alert("İşlem Başarısız Hata Kodu: " + err);
         });
+
+        let archiveID = docRef.id;
+        console.log("DOSYANIN ARŞİVDEKİ ID'Sİ: " + archiveID);*/
+
+        let sourceCollection = "news-page";
+        let targetCollection = "archive";
+        let documentId = opt;
+
+        let sourceDocRef = doc(db, sourceCollection, documentId);
+
+        let sourceDocSnapshot = await getDoc(sourceDocRef);
+        let sourceDocData = sourceDocSnapshot.data();
+
+        await deleteDoc(sourceDocRef);
+
+        let targetDocRef = doc(db, targetCollection, documentId);
+        await setDoc(targetDocRef, sourceDocData);
+
+        /*let oldArchiveFile = undefined;
+
+
+
+        let imageRef = ref(storage, "NewsImages/" + opt);
+
+        let storageRef = ref(storage, "NewsImages/" + opt);
+
+        getDownloadURL(storageRef).then((url) => {
+          fetch(url)
+            .then((response) => response.blob())
+            .then((blob) => {
+              let file = new File([blob], "Thumbnail", { type: blob.type });
+              oldArchiveFile = file;
+            });
+        });
+
+         storageRef = ref(storage, "NewsImages/" + archiveID);
+
+        uploadBytes(storageRef, oldArchiveFile)
+          .then(() => {
+            console.log("ARCHIVE OBJECT UPLOADED TO FIRESTORE STORAGE");
+          })
+          .catch((err) => {
+            alert("HATA: " + err);
+          });
+
+        deleteObject(imageRef)
+          .then(() => {
+            console.log("OBJECT DELETED FROM FIREBASE STORAGE");
+          })
+          .catch((err) => {
+            alert("Hata: " + err);
+          });*/
       }
       addNewsToArchive();
-      deleteNews();
+      //deleteNews();
+      alert(opt);
       console.log(opt);
     });
     alert("Haberler Arşivlendi...");

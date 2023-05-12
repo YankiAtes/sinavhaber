@@ -55,7 +55,7 @@ btnCreateNew.addEventListener("click", async () => {
     createdDocumentsID = docRef.id;
     alert("Haber Başarılı Bir Şekilde Oluşturuldu...");
   } catch (error) {
-    console.log("Hata! :" + error);
+    alert("Hata! :" + error);
   }
 });
 
