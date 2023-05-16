@@ -8,16 +8,22 @@
     <link rel="stylesheet" href="../css/adminpanel.css" />
   </head>
   <body>
+    <!--Sidebar-->
     <nav>
-      <!--Sidebar-->
       <div class="side-bar">
-        <img src="../img/logo2.png" id="sidebar-logo" />
+        <div class="sidebarlogodiv">
+          <img src="../img/logo2.png" id="sidebar-logo" />
+        </div>
+
         <p id="sidebar-title">Admin</p>
         <a href="adminpanel.html" style="color: white">Ana Sayfa</a>
         <a href="haberler.html">Haberler</a>
         <a href="arsiv.html">Arşiv</a>
         <a href="hakkimizda.html">Hakkımızda</a>
-        <a href="../index.html" id="cikis">Çıkış</a>
+
+        <div class="sidebaraltdiv">
+          <a href="../index.html" id="cikis">Çıkış</a>
+        </div>
       </div>
     </nav>
     <main>
@@ -35,17 +41,38 @@
           <p class="subtitle">Ana Sayfa Yan Haber</p>
           <p class="minitext">HABER FOTOĞRAFI:</p>
           <input type="file" id="imageInputSideNew" class="uploadNewInput" />
-          <p class="minitext" style="margin-bottom: 0">Haber Yazısı:</p>
-          <input
+
+          <!-- 
+            <input
             type="text"
             id="textInputSideNew"
             placeholder="Haber Yazısı Giriniz"
-          />
-          <hr id="sideNewHR" />
+          />-->
+          <div id="wrapper1MAIN">
+            <p class="minitext" style="margin-bottom: 0">Haber Yazısı:</p>
+            <textarea
+              id="textInputSideNew"
+              cols="30"
+              rows="5"
+              placeholder="Haber Yazısı Giriniz"
+              style="resize: none"
+            >
+            </textarea>
+          </div>
 
           <button class="newSender" id="sendSideNew">Yükle</button>
           <!--<button id="reveal">Göster</button>-->
         </div>
+
+
+        <div id="container1">
+          <div class="uploadNew" id="uplaodNew1">
+            <p class="subtitle">Site Yapım Aşaması</p>
+            <p class="minitext">Site Yapım Aşamasında Mı?</p>
+            <input type="checkbox" id="checkYapimAsamasi">
+            <button id="btnYapimAsamasi">Gönder</button>
+            <!--<button id="reveal">Göster</button>-->
+          </div>
       </div>
     </main>
     <script src="../js/admin-mainpage.js" type="module"></script>

@@ -68,3 +68,29 @@ async function showSideNewImage() {
   sideNewTextElement.innerText = sideNewText;
 }
 showSideNewImage();
+
+//YÖNLENDİRME--------------------------------------------------------------------------------------------
+let onConstructionPhase = undefined;
+
+async function getBooleanOnConstructionPhase() {
+  let ref = doc(db, "data", "boolean");
+  let docSnap = await getDoc(ref);
+  if (docSnap.exists()) {
+    onConstructionPhase = docSnap.data().onConstructionPhase;
+  } else {
+    console.log("NECESSARY DOCUMENT NOT FOUND IN DATABASE");
+  }
+}
+
+async function checkConstructionPhase() {
+  await getBooleanOnConstructionPhase();
+
+  if (onConstructionPhase) {
+    const meta = document.createElement("meta");
+    meta.setAttribute("http-equiv", "refresh");
+    meta.setAttribute("content", '0; URL="yakindasinemalarda.html"');
+    document.head.appendChild(meta);
+  }
+}
+
+checkConstructionPhase();

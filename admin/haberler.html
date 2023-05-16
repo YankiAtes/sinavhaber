@@ -9,16 +9,22 @@
     <link rel="stylesheet" href="../css/haberler-admin.css" />
   </head>
   <body>
+    <!--Sidebar-->
     <nav>
-      <!--Sidebar-->
       <div class="side-bar">
-        <img src="../img/logo2.png" id="sidebar-logo" />
+        <div class="sidebarlogodiv">
+          <img src="../img/logo2.png" id="sidebar-logo" />
+        </div>
+
         <p id="sidebar-title">Admin</p>
         <a href="adminpanel.html">Ana Sayfa</a>
         <a href="haberler.html" style="color: white">Haberler</a>
         <a href="arsiv.html">Arşiv</a>
         <a href="hakkimizda.html">Hakkımızda</a>
-        <a href="../index.html" id="cikis">Çıkış</a>
+
+        <div class="sidebaraltdiv">
+          <a href="../index.html" id="cikis">Çıkış</a>
+        </div>
       </div>
     </nav>
     <main>
@@ -36,23 +42,24 @@
           <p class="minitext" style="display: block; margin-left: 20px">
             Açıklama:
           </p>
-          <textarea id="newsTextUploader1" cols="30" rows="10"></textarea>
+          <textarea id="newsTextUploader1" cols="50" rows="10"></textarea>
           <!--<input type="text" id="newsTextUploader1" />-->
         </div>
 
         <button id="createNew">Haber Oluştur</button>
 
-        <hr class="pinkHR" />
+        <hr class="blackHR" />
 
         <p class="minitext">Küçük Fotoğraf Yükleyin:</p>
         <input type="file" id="photoUploader1" style="color: white" />
         <button id="btnUploadPhoto">Fotoğraf Yükle</button>
 
-        <hr class="pinkHR" style="margin-top: 25px" />
+        <hr class="blackHR" style="margin-top: 25px" />
 
         <p class="subtitle">Haberi Düzenleyin</p>
         <div id="haberiDuzenleyinDiv">
           <div id="buttonWrapper">
+            <button id="haberKalipEkle">Haber Detay Kalıbı Oluştur</button>
             <button id="altBaslikEkle">Alt Başlık Ekleyin</button>
             <button id="yaziEkle">Haber Yazısı Ekleyin</button>
             <button id="fotografEkle" style="margin-bottom: 30px">

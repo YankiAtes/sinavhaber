@@ -38,12 +38,14 @@ const storage = getStorage();
 
 //Identify components
 const selectArsivHaberler = document.getElementById("selectArsivHaberler");
+const selectArsivHaberler2 = document.getElementById("selectArsivHaberler2");
 const arsivle = document.getElementById("arsivle");
+const sil = document.getElementById("sil");
 
 //Database for Select
-const docRef = collection(db, "news-page");
+const refNewsPage = collection(db, "news-page");
 
-getDocs(docRef).then((querySnapshot) => {
+getDocs(refNewsPage).then((querySnapshot) => {
   querySnapshot.forEach((doc) => {
     //console.log(doc.id);
     let selectOption = document.createElement("option");
@@ -63,42 +65,7 @@ arsivle.addEventListener("click", () => {
     selectedOptions.forEach((opt) => {
       //opt = seçilen haberlerin id'si
 
-      /*  async function deleteNews() {
-        let ref = doc(db, "news-page", opt);
-
-        let docSnap = await getDoc(ref);
-        if (!docSnap.exists()) {
-          alert("Document does not exist!");
-          return;
-        }
-        //------------------------------------------
-        await deleteDoc(ref).catch((err) => {
-          alert("İşlem Başarısız. Hata Kodu:  " + err);
-        });
-      } */
       async function addNewsToArchive() {
-        /*   **ESKİ KOD let** refArchive = collection(db, "archive");
-        let refNewsPage = doc(db, "news-page", opt);
-
-        let docSnap = await getDoc(refNewsPage);
-
-        let txtTitle = docSnap.data().title;
-        let txtText = docSnap.data().text;
-
-        await deleteDoc(refNewsPage).catch((err) => {
-          alert("İşlem Başarısız. Hata Kodu:  " + err);
-        });
-
-        const docRef = await addDoc(refArchive, {
-          title: txtTitle,
-          text: txtText,
-        }).catch((err) => {
-          alert("İşlem Başarısız Hata Kodu: " + err);
-        });
-
-        let archiveID = docRef.id;
-        console.log("DOSYANIN ARŞİVDEKİ ID'Sİ: " + archiveID);*/
-
         let sourceCollection = "news-page";
         let targetCollection = "archive";
         let documentId = opt;
@@ -112,49 +79,81 @@ arsivle.addEventListener("click", () => {
 
         let targetDocRef = doc(db, targetCollection, documentId);
         await setDoc(targetDocRef, sourceDocData);
-
-        /*let oldArchiveFile = undefined;
-
-
-
-        let imageRef = ref(storage, "NewsImages/" + opt);
-
-        let storageRef = ref(storage, "NewsImages/" + opt);
-
-        getDownloadURL(storageRef).then((url) => {
-          fetch(url)
-            .then((response) => response.blob())
-            .then((blob) => {
-              let file = new File([blob], "Thumbnail", { type: blob.type });
-              oldArchiveFile = file;
-            });
-        });
-
-         storageRef = ref(storage, "NewsImages/" + archiveID);
-
-        uploadBytes(storageRef, oldArchiveFile)
-          .then(() => {
-            console.log("ARCHIVE OBJECT UPLOADED TO FIRESTORE STORAGE");
-          })
-          .catch((err) => {
-            alert("HATA: " + err);
-          });
-
-        deleteObject(imageRef)
-          .then(() => {
-            console.log("OBJECT DELETED FROM FIREBASE STORAGE");
-          })
-          .catch((err) => {
-            alert("Hata: " + err);
-          });*/
       }
       addNewsToArchive();
-      //deleteNews();
       alert(opt);
       console.log(opt);
     });
     alert("Haberler Arşivlendi...");
   } else {
     alert("Haberler Arşivlenmedi...");
+  }
+});
+
+//HABER SİLME SİSTEMİ------------------------------------------------------------------//
+
+/* if (confirmation) {
+    const selectedOptions = Array.from(selectArsivHaberler.selectedOptions).map(
+      (option) => option.value
+    );
+    //seçilen haberler için foreach döngüsü
+    selectedOptions.forEach((opt) => {
+      //opt = seçilen haberlerin id'si
+
+      async function addNewsToArchive() {
+        let sourceCollection = "news-page";
+        let targetCollection = "archive";
+        let documentId = opt;
+
+        let sourceDocRef = doc(db, sourceCollection, documentId);
+
+        let sourceDocSnapshot = await getDoc(sourceDocRef);
+        let sourceDocData = sourceDocSnapshot.data();
+
+        await deleteDoc(sourceDocRef);
+
+        let targetDocRef = doc(db, targetCollection, documentId);
+        await setDoc(targetDocRef, sourceDocData);
+      }
+      addNewsToArchive();
+      alert(opt);
+      console.log(opt);
+    });
+    alert("Haberler Arşivlendi...");
+  }*/
+//Database for select(for:delete)
+const refArchive = collection(db, "archive");
+
+getDocs(refArchive).then((querySnapshot) => {
+  querySnapshot.forEach((doc) => {
+    let selectOption = document.createElement("option");
+    selectOption.innerHTML = doc.data().title;
+    selectOption.value = doc.id;
+    selectArsivHaberler2.appendChild(selectOption);
+  });
+});
+
+sil.addEventListener("click", () => {
+  const confirmation = confirm("Haberleri Silmek İstiyor Musunuz?");
+  if (confirmation) {
+    const selectedOptions = Array.from(
+      selectArsivHaberler2.selectedOptions
+    ).map((option) => option.value);
+    //seçilen haberler için foreach döngüsü
+    selectedOptions.forEach((opt) => {
+      //opt = seçilen haberlerin id'si
+      async function DeleteNews() {
+        let ref = doc(db, "archive", opt);
+
+        await deleteDoc(ref)
+          .then(() => {
+            console.log("Silinen Haber ID: " + opt);
+          })
+          .catch((err) => {
+            alert("Hata: " + err);
+          });
+      }
+      DeleteNews();
+    });
   }
 });

@@ -12,6 +12,14 @@ import {
   deleteDoc,
   deleteField,
 } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore.js";
+import {
+  getStorage,
+  ref,
+  uploadBytes,
+  getDownloadURL,
+  listAll,
+  getMetadata,
+} from "https://www.gstatic.com/firebasejs/9.19.1/firebase-storage.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -30,6 +38,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore();
+const storage = getStorage();
 
 alert(localStorage.getItem("clickedNewsID"));
 
@@ -75,6 +84,27 @@ async function setText() {
     }
   }
 }*/
+
+//DETAY FORO YUKLEME----------------------------------------TODO-----------------------------------------
+console.log("LOCAL STORAGE ID: " + localStorage.getItem("clickedNewsID"));
+let folderRef = ref(
+  storage,
+  "NewsImages/" + localStorage.getItem("clickedNewsID") + "/" + "array/"
+);
+
+let ImageUrls = [];
+
+folderRef
+  .listAll()
+  .then(function (res) {
+    res.items.forEach(function (itemRef) {
+      itemRef.getDownloadURL().then(function (url) {
+        ImageUrls.push(url);
+      });
+    });
+  })
+  .catch((err) => alert("Hata: ") + err);
+
 async function setSubTitleAndText() {
   let ref = doc(db, "news-page", localStorage.getItem("clickedNewsID"));
   const docSnap = await getDoc(ref);

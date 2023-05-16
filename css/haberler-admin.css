@@ -8,10 +8,10 @@
   display: block;
   width: 500px;
   height: max-content;
-  border-color: rgb(255, 0, 195);
   border-width: 3px;
-  border-style: solid;
-  background-color: black;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(249,177,21);
   margin: auto;
 }
 #preview {
@@ -37,43 +37,44 @@
 #createNew {
   margin-left: 20px;
   margin-top: 20px;
-  color: black;
-  background-color: rgb(255, 0, 195);
+  color: white;
+  background-color: black;
   border-style: solid;
   border-radius: 20px;
   padding: 8px 10px 8px 10px;
   display: block;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: opacity 0.2s;
 }
 #createNew:hover {
-  background-color: rgb(193, 0, 148);
+  opacity: 0.8;
 }
 #createNew:active {
-  background-color: rgb(138, 0, 106);
+  opacity: 0.5;
 }
 
 #btnUploadPhoto {
   margin-left: 20px;
   margin-top: 20px;
-  color: black;
-  background-color: rgb(255, 0, 195);
+  color: white;
+  background-color: black;
   border-style: solid;
   border-radius: 20px;
   padding: 8px 10px 8px 10px;
   display: block;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: opacity 0.2s;
 }
 #btnUploadPhoto:hover {
-  background-color: rgb(193, 0, 148);
+  opacity: 0.8;
 }
 #btnUploadPhoto:active {
-  background-color: rgb(138, 0, 106);
+  background-color: 0.5;
 }
 
 #wrapper1 {
   width: 100%;
+
 }
 #wrapper2 {
   width: 100%;
@@ -82,7 +83,7 @@
 #newsTitleUploader1 {
   width: 300px;
   margin-bottom: 0;
-  background-color: black;
+  background-color: rgb(249,177,21);
   color: white;
   border-style: solid;
   border: none;
@@ -94,10 +95,10 @@
 }
 #newsTextUploader1 {
   margin-left: 20px;
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
   border-style: solid;
-  border-color: rgb(255, 0, 195);
+  resize: vertical;
   font-weight: bold;
   border-top-width: 1px;
 }
@@ -112,7 +113,7 @@
   margin: 0;
   margin-left: 84px;
 }
-.pinkHR {
+.blackHR {
   width: 100%;
   border-color: rgb(255, 0, 195);
   border-style: solid;

@@ -61,6 +61,7 @@ imageInputMainNew.addEventListener("change", async (e) => {
       console.log("Document written with ID: ", ref.id);
       //alert("Haber Fotoğrafı Yüklendi");
     };
+    location.reload();
   });
 });
 //ANA SAYFA BÜYÜK HABER
@@ -87,4 +88,32 @@ sideNewSendButton.addEventListener("click", async () => {
   await updateDoc(ref, {
     text: sideNewTextInput.value,
   });
+  location.reload();
+});
+
+//YAPIM AŞAMASI------------------------------------------------------------------------------------------
+let btnYapimAsamasi = document.getElementById("btnYapimAsamasi");
+let checkYapimAsamasi = document.getElementById("checkYapimAsamasi");
+
+let checkboxValue = null;
+
+let docRef = doc(db, "data", "boolean");
+const docSnap = await getDoc(docRef);
+if (docSnap.exists()) {
+  checkboxValue = docSnap.data().onConstructionPhase;
+  checkYapimAsamasi.checked = checkboxValue;
+} else {
+  console.log("NECESSARY DOCUMENT NOT FOUND IN DATABASE");
+}
+
+btnYapimAsamasi.addEventListener("click", async () => {
+  let isChecked = checkYapimAsamasi.checked;
+  console.log(isChecked);
+
+  let ref = doc(db, "data", "boolean");
+
+  await updateDoc(ref, {
+    onConstructionPhase: isChecked,
+  });
+  location.reload();
 });

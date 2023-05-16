@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(10, 10, 10);
+  background-color: rgb(235, 237, 239);
   margin: 0;
   padding: 0;
 }
@@ -10,9 +10,9 @@ body {
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #999999;
+  background-color: rgb(60,75,100); 
   overflow-x: hidden;
-  padding-top: 20px;
+  padding-top: 0px;
 }
 #sidebar-logo {
   width: 50%;
@@ -22,6 +22,14 @@ body {
   margin-top: 0;
   margin-bottom: 20px;
 }
+.sidebarlogodiv{
+  background-color: rgb(48,60,84);
+  width: 180px;
+  height: 100px;
+  position: relative;
+  padding-top: 20px;
+}
+
 #sidebar-title {
   color: red;
   font-size: 40px;
@@ -34,7 +42,7 @@ body {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
   font-size: 25px;
-  color: #2d2d2d;
+  color: #171717;
   display: block;
   font-family: arial;
 }
@@ -48,11 +56,24 @@ main {
 #cikis {
   color: red;
   transition: opacity 0.1s;
+  padding: 0;
+  width: 180px;
+  text-align: center;
+  line-height: 50px;
+  height: 50px;
 }
 #cikis:hover {
   opacity: 0.8;
 }
-
+.sidebaraltdiv{
+  background-color: rgb(48,60,84);
+  width: 180px;
+  height: 50px;
+  position: fixed;
+  bottom: 0;
+  justify-content: center;
+  align-items: center;
+}
 .side-bar a {
   width: fit-content;
 }
@@ -72,10 +93,9 @@ main {
   padding-bottom: 40px;
 }
 .uploadNew {
-  background-color: rgb(0, 0, 0);
-  border-color: rgb(255, 0, 195);
+  background-color: rgb(51,153,255);
+  border: none;
   border-width: 3px;
-  border-style: solid;
   width: 500px;
   height: 300px;
   border-radius: 5px;
@@ -85,7 +105,7 @@ main {
   margin-bottom: 40px;
 }
 #uplaodNew1 {
-  height: 250px;
+  height: 200px;
 }
 .uploadNewInput {
   color: white;
@@ -97,14 +117,14 @@ main {
   font-size: 20px;
   text-align: center;
   padding-top: 15px;
-  color: rgb(255, 0, 195);
+  color: white;
 }
 .minitext {
   display: inline-block;
   margin-left: 10px;
   font-family: arial;
   font-weight: bold;
-  color: rgb(255, 0, 195);
+  color: white;
   font-size: 18px;
   margin-bottom: 0;
 }
@@ -112,9 +132,10 @@ main {
 .newSender {
   display: block;
   margin-left: 10px;
-  color: black;
-  background-color: rgb(212, 0, 255);
-  border-style: solid;
+  color: white;
+  font-weight: bold;
+  background-color:#2d2d2d;
+  border: none;
   padding: 10px 22px 10px 22px;
   border-radius: 30px;
   cursor: pointer;
@@ -129,8 +150,8 @@ main {
 }
 
 #textInputSideNew {
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
   font-weight: bold;
   border: none;
   width: 300px;
@@ -145,4 +166,20 @@ main {
   margin: 0;
   padding: 0;
   margin-left: 115px;
+}
+#wrapper1MAIN{
+  width: min-content;
+  height: min-contents;
+  margin-left: 20px;
+}
+
+#sendSideNew{
+ 
+  display: block;
+  margin: auto;
+}
+#sendMainNew{
+  display: block;
+  margin: auto;
+  margin-top: 50px;
 }

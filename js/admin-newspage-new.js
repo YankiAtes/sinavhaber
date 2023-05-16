@@ -80,6 +80,7 @@ inputMainPhoto.addEventListener("change", (event) => {
 //--------------------------------------HABER DÜZENLEME SİSTEMİ-----------------------------------------------------------
 
 const haberiDuzenleyinDiv = document.getElementById("haberiDuzenleyinDiv");
+const haberDetayKalibiOlustur = document.getElementById("haberKalipEkle");
 const altBaslikEkle = document.getElementById("altBaslikEkle");
 const yaziEkle = document.getElementById("yaziEkle");
 const fotografEkle = document.getElementById("fotografEkle");
@@ -87,7 +88,78 @@ let altBaslikNo = 1;
 let haberTextNo = 1;
 let haberFotografiNo = 1;
 
-function haberAltBaslikOlustur() {
+haberDetayKalibiOlustur.addEventListener("click", async () => {
+  //ALT BAŞLIK
+  const altBaslikText = document.createElement("p");
+  altBaslikText.className = "minitext2";
+  altBaslikText.innerText = "Alt Başlık " + altBaslikNo + ":";
+
+  haberiDuzenleyinDiv.appendChild(altBaslikText);
+
+  const altBaslikInput = document.createElement("input");
+  altBaslikInput.type = "text";
+  altBaslikInput.setAttribute("id", "haberAltBaslik" + altBaslikNo);
+  altBaslikInput.className = "haberDetayInputJS";
+  altBaslikNo = altBaslikNo + 1;
+
+  haberiDuzenleyinDiv.appendChild(altBaslikInput);
+  //----------------------------------------------------------------------
+
+  //TEXT
+  const haberTextOlusturText = document.createElement("p");
+  haberTextOlusturText.className = "minitext2";
+
+  haberTextOlusturText.innerText = "Haber Yazısı " + haberTextNo;
+
+  haberiDuzenleyinDiv.appendChild(haberTextOlusturText);
+
+  const haberTextInput = document.createElement("input");
+  haberTextInput.type = "text";
+  haberTextInput.id = "haberText" + haberTextNo;
+  haberTextInput.className = "haberDetayInputJS";
+  haberTextNo = haberTextNo + 1;
+
+  haberiDuzenleyinDiv.appendChild(haberTextInput);
+  //----------------------------------------------------------------------
+
+  //FOTOGRAF
+  const haberFotografOlusturText = document.createElement("p");
+  haberFotografOlusturText.className = "minitext2";
+  haberFotografOlusturText.innerText =
+    "Haber Fotoğrafı " + haberFotografiNo + ":";
+  haberiDuzenleyinDiv.appendChild(haberFotografOlusturText);
+
+  const haberFotografInput = document.createElement("input");
+  haberFotografInput.type = "file";
+  haberFotografInput.id = "haberFotografi" + haberFotografiNo;
+  haberFotografiNo = haberFotografiNo + 1;
+
+  haberiDuzenleyinDiv.appendChild(haberFotografInput);
+
+  haberFotografInput.addEventListener("change", (event) => {
+    uploadButton.addEventListener("click", () => {
+      //DETAY FOTOGRAFI
+      for (let i = 1; i <= haberFotografiNo; i++) {
+        let fileInput = document.getElementById(
+          "haberFotografi" + i // Use i instead of haberFotografiNo
+        );
+        let file = fileInput.files[0]; // Use fileInput instead of event.target
+        const storageRef = ref(
+          storage,
+          "NewsImages/" + createdDocumentsID + "/" + "array/" + i // Use i instead of haberFotografiNo
+        );
+
+        uploadBytes(storageRef, file).then(() => {
+          console.log("FILE UPLOAD TO FIREBASE 9 STORAGE");
+        });
+      }
+    });
+  });
+
+  //----------------------------------------------------------------------
+});
+
+/*function haberAltBaslikOlustur() {
   const altBaslikText = document.createElement("p");
   altBaslikText.className = "minitext2";
   altBaslikText.innerText = "Alt Başlık " + altBaslikNo + ":";
@@ -134,7 +206,7 @@ function haberFotografOlustur() {
 }
 altBaslikEkle.addEventListener("click", haberAltBaslikOlustur);
 yaziEkle.addEventListener("click", haberTextOlustur);
-fotografEkle.addEventListener("click", haberFotografOlustur);
+fotografEkle.addEventListener("click", haberFotografOlustur);*/
 
 const uploadButton = document.getElementById("upload1");
 let haberAltBaslikArray = [];
@@ -159,5 +231,6 @@ uploadButton.addEventListener("click", () => {
       haberTextArray: haberTextArray,
     });
   }
+
   updateDocFields();
 });
