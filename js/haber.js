@@ -18,7 +18,6 @@ import {
   uploadBytes,
   getDownloadURL,
   listAll,
-  getMetadata,
 } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-storage.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -40,7 +39,7 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore();
 const storage = getStorage();
 
-alert(localStorage.getItem("clickedNewsID"));
+console.log("ID:" + localStorage.getItem("clickedNewsID"));
 
 //NEW
 let haberId = localStorage.getItem("clickedNewsID");
@@ -86,7 +85,7 @@ async function setText() {
 }*/
 
 //DETAY FORO YUKLEME----------------------------------------TODO-----------------------------------------
-console.log("LOCAL STORAGE ID: " + localStorage.getItem("clickedNewsID"));
+/*console.log("LOCAL STORAGE ID: " + localStorage.getItem("clickedNewsID"));
 let folderRef = ref(
   storage,
   "NewsImages/" + localStorage.getItem("clickedNewsID") + "/" + "array/"
@@ -104,6 +103,26 @@ folderRef
     });
   })
   .catch((err) => alert("Hata: ") + err);
+*/
+
+let imagesRef = ref(
+  storage,
+  "NewsImages/" + localStorage.getItem("clickedNewsID") + "/" + "array/"
+);
+
+let imageUrls = [];
+
+await listAll(imagesRef).then((res) => {
+  res.items.forEach((itemRef) => {
+    getDownloadURL(itemRef)
+      .then((url) => {
+        imageUrls.push(url);
+      })
+      .catch((err) => alert("Hata: " + err));
+  });
+});
+
+console.log(imageUrls);
 
 async function setSubTitleAndText() {
   let ref = doc(db, "news-page", localStorage.getItem("clickedNewsID"));
@@ -114,7 +133,8 @@ async function setSubTitleAndText() {
 
     let maxLen = Math.max(
       docSnap.data().haberAltBaslikArray.length,
-      docSnap.data().haberTextArray.length
+      docSnap.data().haberTextArray.length,
+      imageUrls.length
     );
 
     for (let i = 0; i < maxLen; i++) {
@@ -131,6 +151,11 @@ async function setSubTitleAndText() {
         text.innerHTML = docSnap.data().haberTextArray[i];
         backgroundContainer.appendChild(text);
       }
+
+      let image = document.createElement("img");
+      image.setAttribute("src", imageUrls[i]);
+      image.className = "image-new";
+      backgroundContainer.appendChild(image);
     }
   }
 }

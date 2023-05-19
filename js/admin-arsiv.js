@@ -55,7 +55,12 @@ getDocs(refNewsPage).then((querySnapshot) => {
   });
 });
 
-arsivle.addEventListener("click", () => {
+//delay function
+function delay(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+arsivle.addEventListener("click", async () => {
   const confirmation = confirm("Haberleri Arşivlemek İstiyor Musunuz?");
   if (confirmation) {
     const selectedOptions = Array.from(selectArsivHaberler.selectedOptions).map(
@@ -81,13 +86,14 @@ arsivle.addEventListener("click", () => {
         await setDoc(targetDocRef, sourceDocData);
       }
       addNewsToArchive();
-      alert(opt);
-      console.log(opt);
+      console.log("Seçilen Haberin IDsi: " + opt);
+      alert("Haberler Arşivlendi...");
     });
-    alert("Haberler Arşivlendi...");
   } else {
     alert("Haberler Arşivlenmedi...");
   }
+  await delay(1000);
+  location.reload();
 });
 
 //HABER SİLME SİSTEMİ------------------------------------------------------------------//
@@ -133,7 +139,7 @@ getDocs(refArchive).then((querySnapshot) => {
   });
 });
 
-sil.addEventListener("click", () => {
+sil.addEventListener("click", async () => {
   const confirmation = confirm("Haberleri Silmek İstiyor Musunuz?");
   if (confirmation) {
     const selectedOptions = Array.from(
@@ -156,4 +162,6 @@ sil.addEventListener("click", () => {
       DeleteNews();
     });
   }
+  await delay(1000);
+  location.reload();
 });

@@ -89,6 +89,7 @@ let haberTextNo = 1;
 let haberFotografiNo = 1;
 
 haberDetayKalibiOlustur.addEventListener("click", async () => {
+  let container = document.createElement("container");
   //ALT BAŞLIK
   const altBaslikText = document.createElement("p");
   altBaslikText.className = "minitext2";
@@ -96,8 +97,10 @@ haberDetayKalibiOlustur.addEventListener("click", async () => {
 
   haberiDuzenleyinDiv.appendChild(altBaslikText);
 
-  const altBaslikInput = document.createElement("input");
-  altBaslikInput.type = "text";
+  const altBaslikInput = document.createElement("textarea");
+  altBaslikInput.setAttribute("cols", "60");
+  altBaslikInput.setAttribute("rows", "10");
+  //altBaslikInput.type = "text";
   altBaslikInput.setAttribute("id", "haberAltBaslik" + altBaslikNo);
   altBaslikInput.className = "haberDetayInputJS";
   altBaslikNo = altBaslikNo + 1;
@@ -109,12 +112,14 @@ haberDetayKalibiOlustur.addEventListener("click", async () => {
   const haberTextOlusturText = document.createElement("p");
   haberTextOlusturText.className = "minitext2";
 
-  haberTextOlusturText.innerText = "Haber Yazısı " + haberTextNo;
+  haberTextOlusturText.innerText = "Haber Yazısı " + haberTextNo + ":";
 
   haberiDuzenleyinDiv.appendChild(haberTextOlusturText);
 
-  const haberTextInput = document.createElement("input");
-  haberTextInput.type = "text";
+  const haberTextInput = document.createElement("textarea");
+  haberTextInput.setAttribute("cols", "60");
+  haberTextInput.setAttribute("rows", "10");
+  //haberTextInput.type = "text";
   haberTextInput.id = "haberText" + haberTextNo;
   haberTextInput.className = "haberDetayInputJS";
   haberTextNo = haberTextNo + 1;
@@ -130,8 +135,10 @@ haberDetayKalibiOlustur.addEventListener("click", async () => {
   haberiDuzenleyinDiv.appendChild(haberFotografOlusturText);
 
   const haberFotografInput = document.createElement("input");
+
   haberFotografInput.type = "file";
   haberFotografInput.id = "haberFotografi" + haberFotografiNo;
+  haberFotografInput.className = "haberFotografiInputJS";
   haberFotografiNo = haberFotografiNo + 1;
 
   haberiDuzenleyinDiv.appendChild(haberFotografInput);
@@ -155,7 +162,9 @@ haberDetayKalibiOlustur.addEventListener("click", async () => {
       }
     });
   });
-
+  const blackHr = document.createElement("hr");
+  blackHr.className = "blackHR";
+  haberiDuzenleyinDiv.appendChild(blackHr);
   //----------------------------------------------------------------------
 });
 
