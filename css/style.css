@@ -96,7 +96,6 @@ div {
   transform: scale(1.05);
 }
 
-
 #side-new1 {
   margin-left: 5%;
   margin-top: 2%;
@@ -136,7 +135,6 @@ div {
   width: 30%;
   height: 28vh;
   margin-bottom: 5%;
- 
 }
 .side-new-2-text {
   color: black;
@@ -154,9 +152,8 @@ div {
   height: 100%;
   cursor: pointer;
   border: none;
-  border-radius: 7px; 
+  border-radius: 7px;
 }
-
 
 #footer {
   width: 100%;
@@ -165,8 +162,6 @@ div {
   vertical-align: bottom;
   display: inline-block;
   margin-top: 2%;
-
- 
 }
 #footer-left {
   display: block;

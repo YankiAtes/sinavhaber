@@ -1,0 +1,27 @@
+#container {
+  width: 70%;
+  min-height: 500px;
+  background-color: white;
+  border-radius: 10px;
+  margin: auto;
+  margin-top: 40px;
+  margin-bottom: 150px;
+}
+
+#hakkimizdaTitle {
+  font-family: arial;
+  text-align: center;
+  padding-top: 20px;
+}
+
+#hakkimizda {
+  padding: 40px 50px 40px 50px;
+  font-family: Arial;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 950px) {
+  #container {
+    width: 96%;
+  }
+}

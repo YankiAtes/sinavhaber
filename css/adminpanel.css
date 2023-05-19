@@ -10,7 +10,7 @@ body {
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: rgb(60,75,100); 
+  background-color: rgb(60, 75, 100);
   overflow-x: hidden;
   padding-top: 0px;
 }
@@ -22,8 +22,8 @@ body {
   margin-top: 0;
   margin-bottom: 20px;
 }
-.sidebarlogodiv{
-  background-color: rgb(48,60,84);
+.sidebarlogodiv {
+  background-color: rgb(48, 60, 84);
   width: 180px;
   height: 100px;
   position: relative;
@@ -65,8 +65,8 @@ main {
 #cikis:hover {
   opacity: 0.8;
 }
-.sidebaraltdiv{
-  background-color: rgb(48,60,84);
+.sidebaraltdiv {
+  background-color: rgb(48, 60, 84);
   width: 180px;
   height: 50px;
   position: fixed;
@@ -80,10 +80,9 @@ main {
 
 #title {
   text-align: center;
-  color: red;
   font-family: arial;
   font-weight: bolder;
-  color: rgb(255, 0, 195);
+  color: rgb(37, 37, 37);
 }
 #container1 {
   margin: auto;
@@ -93,7 +92,7 @@ main {
   padding-bottom: 40px;
 }
 .uploadNew {
-  background-color: rgb(51,153,255);
+  background-color: rgb(51, 153, 255);
   border: none;
   border-width: 3px;
   width: 500px;
@@ -134,7 +133,7 @@ main {
   margin-left: 10px;
   color: white;
   font-weight: bold;
-  background-color:#2d2d2d;
+  background-color: #2d2d2d;
   border: none;
   padding: 10px 22px 10px 22px;
   border-radius: 30px;
@@ -167,18 +166,17 @@ main {
   padding: 0;
   margin-left: 115px;
 }
-#wrapper1MAIN{
+#wrapper1MAIN {
   width: min-content;
   height: min-contents;
   margin-left: 20px;
 }
 
-#sendSideNew{
- 
+#sendSideNew {
   display: block;
   margin: auto;
 }
-#sendMainNew{
+#sendMainNew {
   display: block;
   margin: auto;
   margin-top: 50px;

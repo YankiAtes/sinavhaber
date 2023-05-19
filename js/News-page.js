@@ -105,7 +105,7 @@ function createNewElement(imageUrl, newTitleDB, newTextDB, newDateDB, newID) {
   let link = newsLink;
   link.addEventListener("click", () => {
     console.log("event listener added.");
-    alert(link.id);
+    //alert(link.id);
     localStorage.setItem("clickedNewsID", link.id);
   });
 }
