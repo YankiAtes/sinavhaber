@@ -30,11 +30,13 @@ const firebaseConfig = {
   storageBucket: "gs://sinavhaber-6f8882.appspot.com",
 };
 
-let createdDocumentsID = undefined;
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore();
 const storage = getStorage();
+
+//GLOBAL
+let createdDocumentsID = undefined;
 
 //Element Reference
 let inputNewTitle = document.getElementById("newsTitleUploader1");
@@ -238,6 +240,7 @@ uploadButton.addEventListener("click", () => {
     await updateDoc(ref, {
       haberAltBaslikArray: haberAltBaslikArray,
       haberTextArray: haberTextArray,
+      isLinked: true,
     });
   }
 

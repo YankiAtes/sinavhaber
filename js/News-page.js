@@ -18,6 +18,9 @@ import {
   getDownloadURL,
 } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-storage.js";
 
+//GLOBAL
+let isLinked = undefined;
+
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyDo9lGR-HEf5z0SHKLfV1XFxZY6NzD_npE",
@@ -52,7 +55,13 @@ docsSnap.forEach((doc) => {
   });
 });
 
-function createNewElement(imageUrl, newTitleDB, newTextDB, newDateDB, newID) {
+async function createNewElement(
+  imageUrl,
+  newTitleDB,
+  newTextDB,
+  newDateDB,
+  newID
+) {
   // Get the container div
   const container = document.getElementById("container");
 
@@ -63,7 +72,15 @@ function createNewElement(imageUrl, newTitleDB, newTextDB, newDateDB, newID) {
   // Create the link element for the news item
   const newsLink = document.createElement("a");
   newsLink.className = "newsLink";
-  newsLink.href = "../Haberler/haber.html";
+
+  let ref = doc(db, "news-page", newID);
+  const docsnap = await getDoc(ref);
+
+  isLinked = docsnap.data().isLinked;
+
+  if (isLinked) {
+    newsLink.href = "../Haberler/haber.html";
+  }
   //db
   newsLink.id = newID;
 
