@@ -1,3 +1,8 @@
+if (localStorage.getItem("allowAccess") === "false") {
+  window.location.href = "admin.html";
+}
+//-----------------------------------------------------
+
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
 
@@ -117,3 +122,9 @@ btnYapimAsamasi.addEventListener("click", async () => {
   });
   location.reload();
 });
+
+//LOGIN SAFETY
+window.addEventListener("beforeunload", () => {
+  localStorage.setItem("allowAccess", "false");
+});
+//-----------------------------------------------------
