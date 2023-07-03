@@ -123,8 +123,8 @@ btnYapimAsamasi.addEventListener("click", async () => {
   location.reload();
 });
 
-//LOGIN SAFETY
-window.addEventListener("beforeunload", () => {
+//LOGIN SAFETY !IMPORTANT
+/*window.addEventListener("beforeunload", () => {
   localStorage.setItem("allowAccess", "false");
-});
+});  */
 //-----------------------------------------------------
